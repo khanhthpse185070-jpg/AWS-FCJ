@@ -18,42 +18,29 @@ pre: " <b> 1.5. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Cấu hình Bộ cân bằng tải ứng dụng (ALB) và Nhóm đích (Target Group).                                                                                             | 05/10/2025   | 07/10/2025      |<https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Tạo Mẫu khởi chạy (Launch Template) cho EC2 và thiết lập Nhóm tự động mở rộng (ASG).                                           | 06/10/2025   | 08/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Triển khai kiến trúc HA/ASG Đa-AZ (Multi-AZ) gắn vào ALB. | 06/10/2025   | 08/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Cấu hình Chính sách mở rộng (Scaling Policy) dựa trên mức sử dụng CPU và thực hiện Kiểm tra tải.                  | 08/10/2025   | 09/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | -  Hoàn thành Lab tổng hợp về kiến trúc Ứng dụng Web chịu lỗi.                                                                                        | 08/10/2025   | 10/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Kiến trúc chịu lỗi: Thiết kế và triển khai một kiến trúc Tính sẵn sàng cao (HA) thực sự:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  * Trải rộng thành công kiến trúc trên nhiều Vùng sẵn sàng (AZ) để có khả năng phục hồi.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Cân bằng Tải Nâng cao: Đã cấu hình Bộ cân bằng tải ứng dụng (ALB):
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+  * Thiết lập Listeners (HTTP/HTTPS) và tạo Nhóm đích (Target Groups).
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+  * Triển khai cấu hình kiểm tra tình trạng chính xác để đảm bảo lưu lượng truy cập chỉ được định tuyến đến các phiên bản khỏe mạnh.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Triển khai mở rộng động: Tạo một Nhóm Tự động Mở rộng (ASG) mạnh mẽ bằng cách sử dụng Mẫu Khởi chạy chi tiết:
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+  * Triển khai cả Chính sách Mở rộng Theo dõi Mục tiêu (Target Tracking Scaling Policies).
+
+  * Xác thực thành công các sự kiện mở rộng ra và mở rộng vào tự động thông qua thử nghiệm tải có chủ đích.
 
 

@@ -34,10 +34,10 @@ pre: " <b> 1.5. </b> "
 
     * Set up listeners (HTTP/HTTPS) and created Target Groups.
 
-Implemented precise health check configurations to ensure traffic is only routed to healthy instances.
+    * Implemented precise health check configurations to ensure traffic is only routed to healthy instances.
 
-Dynamic Scaling Implementation: Created a robust Auto Scaling Group (ASG) using a detailed Launch Template:
+* Dynamic Scaling Implementation: Created a robust Auto Scaling Group (ASG) using a detailed Launch Template:
 
-Implemented both Target Tracking Scaling Policies (e.g., maintaining average CPU utilization below 70%).
+    * Implemented both Target Tracking Scaling Policies.
 
-Successfully validated the automatic scale-out and scale-in events through intentional load testing.
+    * Successfully validated the automatic scale-out and scale-in events through intentional load testing.

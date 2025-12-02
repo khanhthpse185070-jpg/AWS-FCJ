@@ -12,46 +12,38 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Build basic serverless APIs with Lambda/API Gateway and utilize CDN (CLoudFront) for content delivery.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | -  Deploy a simple Web application on Lightsail.                                                                                                  | 12/10/2025 | 13/10/2025      |<https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Write a basic Lambda function and trigger it with an Event (S3/SNS).                                              | 13/10/2025 | 14/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Configure API Gateway (REST API) integrated with Lambda. | 14/10/2025 | 15/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Configure CloudFront to accelerate and protect an S3 Static Website.                            | 15/10/2025 | 16/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | -  Learn about Route 53 (Record Types, Routing Policies) and Lambda@Edge.                                                                                    | 16/10/2025 | 17/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 6 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Serverless API Creation: Successfully implemented a core Serverless API workflow:
 
-* Successfully created and configured an AWS Free Tier account.
+  * Wrote and deployed an AWS Lambda function .
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+  * Integrated the function with API Gateway to create a publicly accessible REST endpoint.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Decoupled Events: Demonstrated knowledge of event-driven architectures:
 
-* Used AWS CLI to perform basic operations such as:
+  * Configured Lambda functions to be triggered by various AWS event sources .
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Global Content Acceleration: Implemented and configured Amazon CloudFront as a Content Delivery Network (CDN):
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+  * Used CloudFront in front of an S3 origin, significantly improving asset delivery performance.
+
+  * Provided basic DDoS protection at the edge layer.
+
+* Domain Routing Expertise: Gained practical experience with Amazon Route 53:
+
+  * Configured various record types (A, CNAME).
+
+  * Experimented with advanced routing policies like Simple, Failover, or Latency-based Routing.
