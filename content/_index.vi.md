@@ -7,7 +7,7 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** TRAN HO PHUONG KHANH
+&emsp; **Họ và tên:** TRẦN HỒ PHƯƠNG KHANH
 
 &emsp; **Số điện thoại:** 0854406820
 
@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 24/12/2025
 
-![Ảnh đại diện của bạn](/images/avatar.png)
+![Ảnh đại diện của bạn](/images/phuongkhanh.png)
 
 
 
