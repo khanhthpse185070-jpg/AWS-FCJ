@@ -10,115 +10,157 @@ pre: " <b> 4.1. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch “AWS Well-Architected Security Pillar”
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Chia sẻ các phương pháp thực hành tốt nhất (best practices) dựa trên **AWS Well-Architected Framework (Trụ cột Bảo mật)**.
+
+- Đi sâu vào **Mô hình Trách nhiệm chung (Shared Responsibility Model)** và các nguyên tắc cốt lõi như Zero Trust (Không tin tưởng mặc định) và **Least Privilege** (Quyền tối thiểu).
+
+- Cung cấp hướng dẫn kỹ thuật về hiện đại hóa **Quản lý Định danh & Truy cập (IAM)**.
+
+- Trình bày các chiến lược về Phát hiện mối đe dọa (Detection), Bảo vệ dữ liệu và Tự động hóa ứng phó sự cố (Incident Response - IR).
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Nguyen Tuan Thinh** – Cloud Engineer Trainee
+- **Tran Duc Anh** – Cloud Security Engineer Trainee
+- **Nguyen Do Thanh Dat** – Cloud Engineer Trainee
+- **Kha Van** - Community Leader AWS
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### Nền tảng Bảo mật & Nguyên tắc Cốt lõi
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- **Mô hình Trách nhiệm chung**: Phân định rõ ranh giới giữa bảo mật của đám mây (do AWS lo) và bảo mật trong đám mây (do Khách hàng lo).
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- **Nguyên tắc vàng**:
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+    * Least Privilege: Chỉ cấp những quyền thực sự cần thiết.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+    * Zero Trust: "Không bao giờ tin tưởng, luôn luôn xác minh" — cả bên trong lẫn bên ngoài mạng lưới.
 
-#### Domain-Driven Design (DDD)
+    * Defense in Depth: Thiết lập nhiều lớp kiểm soát bảo mật.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+- **Bối cảnh**: Phân tích các mối đe dọa an ninh mạng phổ biến tại môi trường đám mây ở Việt Nam.
 
-#### Event-Driven Architecture
+#### Pillar 1: Quản lý Định danh & Truy cập (IAM)
+- **Kiến trúc IAM hiện đại**:
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+    * Chuyển dịch từ thông tin xác thực dài hạn (access keys) sang thông tin xác thực tạm thời (Roles).
 
-#### Compute Evolution
+    * IAM Identity Center: Triển khai SSO (Đăng nhập một lần) để quản lý truy cập tập trung.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+_ **Chiến lược Đa tài khoản (Multi-Account)**: Sử dụng SCPs (Service Control Policies) và ranh giới phân quyền để quản lý quyền hạn ở cấp độ Tổ chức (Organization).
 
-#### Amazon Q Developer
+- **Vệ sinh định danh (Credential Hygiene)**: Bắt buộc dùng MFA, xoay vòng khóa định kỳ và sử dụng Access Analyzer.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### Pillar 2: Phát hiện & Giám sát (Detection)
+- **Giám sát liên tục**:
+
+    * CloudTrail: Kiểm toán (Audit) các lời gọi API ở cấp độ tổ chức.
+
+    * GuardDuty: Phát hiện mối đe dọa thông minh.
+
+    * Security Hub: Quản lý tư thế bảo mật (security posture) tập trung.
+
+- **Ghi nhật ký (Logging)**: Triển khai log tại mọi tầng (VPC Flow Logs, ALB Logs, S3 Access Logs).
+
+- **Detection-as-Code**: Tự động hóa cảnh báo thông qua EventBridge.
+
+#### Pillar 3 & 4: Bảo vệ Hạ tầng & Dữ liệu
+- **Bảo mật Mạng**:
+
+    * Phân đoạn VPC và phân biệt rõ giữa Security Groups (stateful - có trạng thái) và NACLs (stateless - không trạng thái).
+
+    * Bảo vệ biên giới mạng bằng WAF, Shield và Network Firewall.
+
+- **Mã hóa Dữ liệu**:
+
+    * KMS (Key Management Service): Quản lý chính sách khóa và xoay vòng khóa.
+
+    * Mã hóa dữ liệu khi lưu trữ (At-rest: S3, EBS, RDS) và khi truyền tải (In-transit: TLS).
+
+- **Quản lý Bí mật**: Thay thế mật khẩu gán cứng (hard-coded) bằng Secrets Manager hoặc Parameter Store.
+
+#### Pillar 5: Ứng phó Sự cố (Incident Response - IR)
+- **Vòng đời IR**: Chuẩn bị, Phát hiện, Ngăn chặn, Loại bỏ, Khôi phục, Hoạt động sau sự cố.
+
+- **Kịch bản ứng phó (Playbooks)**: Hướng dẫn cụ thể cho các tình huống như:
+
+    * Lộ IAM key (Compromised IAM keys).
+
+    * Dữ liệu S3 bị public ra ngoài.
+
+    * EC2 bị nhiễm mã độc.
+
+- **Tự động hóa**: Sử dụng Lambda và Step Functions để tự động khắc phục các mối đe dọa đơn giản (ví dụ: cô lập một máy chủ).
 
 ### Những Gì Học Được
 
 #### Tư Duy Thiết Kế
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Định danh là Vành đai mới**: Tập trung mạnh vào IAM như điểm kiểm soát chính, không chỉ dựa vào tường lửa mạng.
+
+- **Tự động hóa Bảo mật**: Chuyển từ kiểm tra thủ công sang "Security as Code" sử dụng các công cụ như CloudFormation và EventBridge.
+
+- **Giả định vi phạm (Assume Breach)**: Thiết kế hệ thống với giả định rằng cuộc tấn công sẽ xảy ra, tập trung vào việc giảm thiểu phạm vi ảnh hưởng (blast radius).
 
 #### Kiến Trúc Kỹ Thuật
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Log tập trung**: Log từ VPC, S3, và Ứng dụng phải được lưu trữ tập trung và bất biến (immutable) để phục vụ điều tra.
+
+- **Mã hóa mặc định**: Bật tính năng mã hóa cho tất cả các dịch vụ lưu trữ (EBS, S3, RDS) ngay khi khởi tạo.
+
+- **Phân tách tài khoản**: Sử dụng các tài khoản AWS riêng biệt cho Production, Development và Log Archive để hạn chế tác động khi bị tấn công.
 
 #### Chiến Lược Hiện Đại Hóa
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Triển khai theo giai đoạn**: Bắt đầu với những điều cơ bản (MFA, CloudTrail) trước khi chuyển sang tự động hóa nâng cao (Auto-remediation).
+
+- **Diễn tập thường xuyên (Game Days)**: Thực hành các Playbook IR thường xuyên để đảm bảo đội ngũ biết cách phản ứng khi có sự cố thực tế.
+
+- **Lộ trình học tập**: Hướng tới chứng chỉ AWS Certified Security – Specialty để đào sâu kiến thức.
 
 ### Ứng Dụng Vào Công Việc
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- **Kiểm toán IAM Policies**: Rà soát lại người dùng/vai trò hiện tại để loại bỏ các access key dài hạn và bắt buộc dùng MFA.
+
+- **Bật GuardDuty**: Kích hoạt GuardDuty ở tất cả các region để bắt đầu phát hiện mối đe dọa ngay lập tức.
+
+- **Tái cấu trúc Secrets**: Quét mã nguồn để tìm các thông tin xác thực bị gán cứng (hard-coded) và chuyển chúng vào AWS Secrets Manager.
+
+- **Xây dựng IR Playbooks**: Viết và kiểm thử quy trình cụ thể cho các kịch bản "S3 Public Bucket" và "Lộ thông tin xác thực IAM".
+
+- **Triển khai SCPs**: Nếu đang sử dụng AWS Organizations, hãy áp dụng Service Control Policies để ngăn chặn việc sử dụng tài khoản root hoặc tắt CloudTrail trái phép.
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Tham dự buổi chia sẻ **AWS Well-Architected Security Pillar** mang lại giá trị thực tiễn cao, cung cấp một cách tiếp cận có cấu trúc về bảo mật đám mây thay vì chỉ liệt kê các công cụ rời rạc. Các trải nghiệm chính bao gồm:
 
 #### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+- Việc phân tích sâu Mô hình Trách nhiệm chung giúp làm rõ chính xác những gì đội ngũ phát triển cần chịu trách nhiệm so với những gì AWS đảm nhận.
+
+- Hiểu rõ bối cảnh các mối đe dọa cụ thể tại Việt Nam giúp ưu tiên các biện pháp kiểm soát bảo mật cần triển khai trước.
 
 #### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+- Mini Demo (IAM): Phần demo về xác thực IAM Policy và giả lập truy cập (simulate access) cực kỳ hữu ích để gỡ lỗi quyền hạn mà không gây rủi ro cho môi trường production.
+
+- Mô phỏng IR: Việc trực quan hóa quy trình phát hiện EC2 nhiễm mã độc -> tạo snapshot -> cô lập instance là một điểm nhấn ấn tượng.
 
 #### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+- Thấy được sức mạnh của Access Analyzer trong việc xác định các truy cập public ngoài ý muốn.
+
+- Học cách EventBridge có thể biến một log thụ động thành một cảnh báo chủ động hoặc hành động khắc phục tức thì.
 
 #### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+Phiên Q&A về "Các lỗi thường gặp trong doanh nghiệp Việt" đưa ra những cảnh báo thực tế về việc cấu hình sai Security Groups và quyền hạn S3.
 
 #### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Bảo mật không phải là rào cản mà là yếu tố thúc đẩy (enabler) khi áp dụng mô hình "Detection-as-Code".
+
+- Ứng phó sự cố hiệu quả dựa rất nhiều vào sự chuẩn bị (Playbooks) và tự động hóa; cố gắng tìm giải pháp trong khi đang bị tấn công là quá muộn.
 
 #### Một số hình ảnh khi tham gia sự kiện
 * Thêm các hình ảnh của các bạn tại đây
