@@ -9,118 +9,69 @@ pre: " <b> 3.4. </b> "
 ⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+# Architecting for AI excellence: AWS launches three Well-Architected Lenses at re:Invent 2025
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+by Anitha Selvan and Arvind Raghunathan on 19 NOV 2025 in Amazon Machine Learning, Announcements, Artificial Intelligence, AWS Well-Architected, Generative AI |Permalink | Comments | Share
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+At re:Invent 2025, we introduce one new lens and two significant updates to the AWS Well-Architected Lenses specifically focused on AI workloads: the Responsible AI Lens, the Machine Learning (ML) Lens, and the Generative AI Lens. Together, these lenses provide comprehensive guidance for organizations at different stages of their AI journey, whether you’re just starting to experiment with machine learning or already deploying complex AI applications at scale.
 
----
+The AWS Well-Architected Framework provides the best architectural practices for designing and operating reliable, secure, performance efficient, cost-optimized, and sustainable workloads in the cloud.
 
-## Architecture Guidance
+## The Responsible AI Lens: Embedding trust in AI systems
+The Responsible AI Lens offers a structured approach for developers to assess and track their AI workloads against established best practices, identify potential gaps in their AI implementation and receive actionable guidance to improve their AI systems’ quality and alignment with responsible AI principles. By using the Responsible AI Lens you can make informed decisions that balance business and technical requirements, accelerating your path from AI experimentation to production-ready solutions.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+Key takeaways from the Responsible AI Lens:
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+  * Every AI system has a Responsible AI consideration: Whether intentionally designed or not, AI systems inherently carry Responsible AI implications that need to be actively managed rather than left to chance.
+  * AI systems can be used beyond original intent and may have unintended impacts: Applications often get utilized in ways developers didn’t anticipate, and due to their probabilistic nature, AI systems can produce unexpected outcomes even within intended use cases, making robust Responsible AI decisions essential from the start.
+  * Responsible AI is an enabler to innovation and trust: Rather than being a constraint, Responsible AI practices can accelerate innovation by proactively building stakeholder and customer trust and reducing downstream risks.
 
-**The solution architecture is now as follows:**
+The Responsible AI Lens serves as the foundational guidance for AI development activities, providing critical guidelines that inform both the Machine Learning Lens and the Generative AI Lens implementations.
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+## The Machine Learning Lens: Foundation for ML workloads
+The Machine Learning Lens provides you with a set of established cloud-agnostic best practices in the form of Well-Architected Framework pillars for each machine learning (ML) lifecycle phase. The updated Machine Learning Lens provides a consistent approach for designing, building, and operating machine learning workloads on AWS. It addresses the full spectrum of ML workloads, from traditional supervised and unsupervised learning to modern AI applications.
 
----
+The updated Machine Learning Lens incorporates the latest AWS ML capabilities (evolved since their introduction in 2023). What’s new in the updated ML Lens:
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+  * Enhanced data and AI collaborative workflows through Amazon SageMaker Unified Studio.
+  * AI-assisted development for code generation and productivity enhancement.
+  * Distributed training infrastructure for foundation model development and fine-tuning with Amazon SageMaker HyperPod.
+  * Model customization capabilities such as knowledge distillation and fine-tuning domain-specific applications using Amazon Bedrock with Kiro and Amazon Q Developer.
+  * No-code ML development using Amazon SageMaker Canvas with Amazon Q integration.
+  * Improved bias detection with enhanced fairness metrics and Responsible AI capabilities in Amazon SageMaker Clarify.
+  * Automated dashboard creation for business insights through Amazon Quick Sight.
+  * Modular inference architecture for flexible model deployment with Inference Components.
+  * Advanced observability with improved debugging and monitoring capabilities across the ML lifecycle.
+  * Enhanced cost optimization for resource management through Amazon SageMaker Training Plans, Savings Plans, and Spot Instance support.
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+You can use the ML Lens wherever you are on your cloud journey. You can choose to apply this guidance either during the design of your ML workloads or after your workloads have entered production as part of the continuous improvement process. These improvements are powered by key AWS services including Amazon SageMaker Unified Studio, Amazon Q, Amazon SageMaker HyperPod, and Amazon Bedrock.
 
----
+## The Generative AI Lens: Specialized guidance for foundation models
+The Generative AI Lens provides a consistent approach for customers to evaluate architectures that use large language models (LLMs) to achieve their business goals. This lens addresses common considerations relevant to model selection, prompt engineering, model customization, workload integration, and continuous improvement. We identify best practices that help you architect your cloud-based applications and workloads according to AWS Well-Architected design principles gathered from supporting thousands of customer implementations. While the Machine Learning (ML) Lens covers the broad spectrum of ML workloads, the Generative AI Lens focuses specifically on foundation models and generative AI applications. The Generative AI Lens provides the best architectural practices for designing and operating generative AI workloads on AWS.
 
-## Technology Choices and Communication Scope
+The updated Generative AI Lens includes several new additions:
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+  * Amazon SageMaker HyperPod guidance for orchestrating complex, long-running generative AI workflows that includes additional service capabilities.
+  * Enhanced Responsible AI preamble with detailed discussion on the eight core dimensions of Responsible AI as described by AWS.
+  * Updated data architecture preamble with strategic considerations needed to architect a data system for generative AI workloads.
+  * New agentic AI preamble introducing architecture paradigms for agentic systems.
+  * Eight architecture scenarios covering common generative AI-powered business applications such as autonomous call centers, knowledge worker co-pilots, and multi-tenant generative AI service systems.
 
----
+The Generative AI Lens builds upon the foundation established by the ML Lens, providing specialized guidance for the unique challenges and opportunities presented by foundation models and generative AI applications.
 
-## The Pub/Sub Hub
+## Implementation strategy for Well-Architected AI/ML guidance: A unified approach
+The new lenses – Responsible AI Lens, Machine Learning Lens, and Generative AI Lens – work together to provide comprehensive guidance for AI development. The Responsible AI Lens guides safe, fair, and secure AI development. It helps balance business needs with technical requirements, streamlining the transition from experimentation to production. The Machine Learning Lens guides organizations in evaluating workloads across both modern AI and traditional machine learning approaches. Recent updates focus on key areas including enhanced data and AI collaborative workflows, AI-assisted development capabilities, large-scale infrastructure provisioning, and customizable model deployment. The Generative AI Lens helps customers evaluate large language model (LLM) based architectures and its updates include guidance for Amazon SageMaker HyperPod users, new insights on agentic AI, and updated architectural scenarios.
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+## What are the next steps?
+The launch of these new lenses at re:Invent 2025 helps organizations build AI systems that are responsible, trustworthy, powerful, and effective. By providing comprehensive guidance across the full spectrum of AI workloads, AWS supports organizations to accelerate their AI initiatives while maintaining the highest standards of responsible AI and technical excellence.
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+Learn more about the AWS Well-Architected Framework and implement the best practice guidance provided using the GitHub repository. These lenses are practical tools designed to help you build AI systems that deliver real business value while maintaining the highest standards of ethics, security, and operational excellence.
 
----
+For additional reading, refer to the AWS Well-Architected Framework and pillar whitepapers, or contact your AWS Solutions Architect or Account Representative for support on implementing these lenses in your organization.
 
-## Core Microservice
+## About the authors
+![picture 1](/images/image3.4.1.png)
+Anitha Selvan is a Go-To-Market Lead for the Cloud Optimization organization at AWS. With over 8 years of experience in product marketing and orchestrating go-to-market strategies across AWS support products, she now focuses on helping organizations accelerate their cloud transformation and AI adoption journeys. Anitha specializes in product launches and go-to-market strategy, combining tactical execution with expertise in architectural best practices and organizational change management to drive product adoption and customer engagements
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
-
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
-
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
-
----
-
-## Staging ER7 Microservice
-
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+![picture 2](/images/image1.png)
+Arvind Raghunathan is a Principal Operations Specialist at AWS and is passionate about helping customers in different phases of their cloud journey with a specialty in cloud operations and optimization. He loves yoga, meditation, trying his skills cooking vegetarian dishes and following international cricket
