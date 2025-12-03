@@ -18,7 +18,7 @@ pre: " <b> 1.1. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | -  Tạo và cấu hình AWS Free Tier account thành công. |                                                                                | 08/09/2025   | 08/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | -  Tạo và cấu hình AWS Free Tier account thành công.                                                               |08/09/2025                 | 08/09/2025   |        <https://cloudjourney.awsstudygroup.com/>| 
 | 3   | -  Làm quen với AWS Management Console và các dịch vụ qua giao diện web.                                             | 09/09/2025   | 09/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
 | 4   | - Cài đặt và cấu hình AWS CLI (Access Key, Secret Key, Default Region).  | 10/09/2025   | 10/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
 | 6   | - Sử dụng AWS CLI để thực hiện các thao tác cơ bản (Xem dịch vụ EC2, Tạo cặp khóa). <br> - Nắm vững khả năng kết nối giữa giao diện web và CLI.              | 12/09/2025   | 12/09/2025      | <https://cloudjourney.awsstudygroup.com/> |

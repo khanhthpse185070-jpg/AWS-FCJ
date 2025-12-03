@@ -12,48 +12,35 @@ pre: " <b> 1.10. </b> "
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Kiểm toán kiến trúc bằng nguyên tắc Well-Architected.
+* Tăng cường bảo mật và tối ưu hóa chi phí.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Học về và cấu hình Phục hồi Thảm họa Đàn hồi (Elastic Disaster Recovery - DR).                                                                                             | 08/11/2025   | 10/11/2025      |<https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Kích hoạt và theo dõi AWS GuardDuty (phát hiện mối đe dọa).                                            | 10/11/2025   | 11/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Phân tích chi phí bằng AWS Cost Explorer và Budgets. | 11/11/2025   | 12/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Đưa ra đề xuất tối ưu hóa chi phí (RI/Savings Plans).                  | 12/11/2025   | 13/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - Đánh giá kiến trúc đã xây dựng dựa trên Khung Kiến trúc Tốt của AWS (Well-Architected Framework).                                                                                         | 13/11/2025   | 14/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tăng cường tư thế Bảo mật: Triển khai giám sát bảo mật nâng cao:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  * Kích hoạt Amazon GuardDuty và xem xét các phát hiện ban đầu.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+  * Hiểu vai trò của việc phát hiện mối đe dọa tự động trong môi trường AWS.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Kiểm toán Kiến trúc: Thực hiện tự kiểm toán toàn diện kiến trúc dựa trên năm trụ cột của Khung Kiến trúc Tốt của AWS (Well-Architected Framework):
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+  * Xác định và lập tài liệu các cơ hội cải thiện độ tin cậy, bảo mật và chi phí.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Phân tích và Chiến lược Tài chính: Thực hiện phân tích chuyên sâu bằng AWS Cost Explorer:
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+  * Xác định các yếu tố chi phí chính và phát triển một chiến lược giảm chi phí chi tiết.
+
+  * Tập trung các khuyến nghị vào việc sử dụng Reserved Instances (RIs) và Spot Instances khi thích hợp.
 
 

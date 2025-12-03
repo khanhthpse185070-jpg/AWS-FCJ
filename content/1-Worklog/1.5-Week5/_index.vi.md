@@ -31,7 +31,7 @@ pre: " <b> 1.5. </b> "
 
   * Trải rộng thành công kiến trúc trên nhiều Vùng sẵn sàng (AZ) để có khả năng phục hồi.
 
-* Cân bằng Tải Nâng cao: Đã cấu hình Bộ cân bằng tải ứng dụng (ALB):
+* Cân bằng Tải Nâng cao: Cấu hình Bộ cân bằng tải ứng dụng (ALB):
 
   * Thiết lập Listeners (HTTP/HTTPS) và tạo Nhóm đích (Target Groups).
 

@@ -12,48 +12,35 @@ pre: " <b> 1.7. </b> "
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Đóng gói ứng dụng, triển khai trên ECS Fargate
+* Sử dụng dịch vụ nhắn tin không đồng bộ (SNS/SQS).
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Nắm vững Docker, viết Dockerfile và đẩy Image lên ECR.                                                                                             | 20/10/2025   | 21/10/2025      |<https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Triển khai ECS Cluster và Định nghĩa tác vụ (Task Definition - Fargate Launch Type).                                            | 21/10/2025   | 22/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Tạo Dịch vụ ECS (ECS Service) và tích hợp với ALB.  | 20/10/2025   | 22/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Cấu hình SNS (Simple Notification Service) và SQS (Simple Queue Service).                  | 23/10/2025   | 24/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - Triển khai ứng dụng sử dụng ECS/Fargate.                                                                                         | 23/10/2025   | 24/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành thạo quy trình Container: Phát triển một Dockerfile hoạt động, xây dựng một image ứng dụng tùy chỉnh và quản lý vòng đời container:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  * Đẩy image ứng dụng lên một kho lưu trữ Amazon Elastic Container Registry (ECR) riêng tư.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Triển khai Container Serverless: Triển khai thành công ứng dụng được đóng gói bằng AWS ECS Fargate:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+  * Loại bỏ nhu cầu quản lý các worker node EC2 cơ bản.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+  * Tích hợp Dịch vụ ECS với ALB.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Giao tiếp bất đồng bộ: Triển khai một thành phần quan trọng của kiến trúc microservices:
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+  * Cấu hình và sử dụng SQS (Simple Queue Service) để phân tách các thành phần ứng dụng.
+
+  * Sử dụng SNS (Simple Notification Service) để nhắn tin fan-out tới nhiều người đăng ký.
 
 

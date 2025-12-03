@@ -25,33 +25,26 @@ pre: " <b> 1.6. </b> "
 
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tạo API Serverless: Triển khai thành công quy trình làm việc API Serverless cốt lõi:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  * Viết và triển khai một Hàm AWS Lambda .
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+  * Tích hợp hàm này với API Gateway để tạo một điểm cuối REST có thể truy cập công khai.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Sự kiện phi tập trung: Chứng minh kiến thức về kiến trúc hướng sự kiện:
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+  * Cấu hình các hàm Lambda để được kích hoạt bởi nhiều nguồn sự kiện AWS khác nhau .
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Tăng tốc nội dung toàn cầu: Triển khai và cấu hình Amazon CloudFront dưới dạng Mạng phân phối nội dung (CDN):
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+  * Sử dụng CloudFront trước một nguồn gốc S3, cải thiện đáng kể hiệu suất phân phối tài sản.
+
+  * Cung cấp khả năng bảo vệ DDoS cơ bản ở tầng vùng biên.
+
+* Chuyên môn định tuyến tên miền: Đã có kinh nghiệm thực tế với Amazon Route 53:
+
+  * Cấu hình các loại bản ghi khác nhau (A, CNAME).
+
+  * Thử nghiệm các chính sách định tuyến nâng cao như định tuyến đơn giản, chuyển đổi dự phòng hoặc định tuyến dựa trên độ trễ.
 
 

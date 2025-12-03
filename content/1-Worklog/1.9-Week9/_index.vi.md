@@ -12,48 +12,33 @@ pre: " <b> 1.9. </b> "
 
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu kiến trúc Data Lake. 
+* Các công cụ cần thiết cho việc di chuyển dữ liệu và cơ sở dữ liệu.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Học kiến trúc Data Lake trên S3 và các nguyên tắc quản lý.                                                                                             | 01/11/2025   | 02/11/2025      |<https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Giới thiệu về AWS Glue (ETL) và Amazon Athena (Truy vấn trên S3).                                            | 02/11/2025   | 03/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Sử dụng Amazon QuickSight để tạo Dashboard từ dữ liệu S3/RDS. | 03/11/2025   | 04/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Tìm hiểu quy trình VM Import/Export và AWS Database Migration Service (DMS).                  | 04/11/2025   | 05/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - Xem lại kiến thức về Di chuyển và Phân tích.                                                                                         | 06/11/2025   | 07/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tiếp xúc với đường ống Phân tích Dữ liệu: Có kiến thức lý thuyết về việc xây dựng Data Lake có khả năng mở rộng trên S3 và vai trò của các công cụ chuyên dụng:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  * Hiểu Amazon Athena (để truy vấn SQL dữ liệu S3) và AWS Glue (để xử lý ETL).
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thiết lập Dashboard Business Intelligence: Thực hiện một bài tập trực quan hóa dữ liệu bằng Amazon QuickSight:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+  * Kết nối QuickSight thành công với một nguồn dữ liệu (S3 hoặc RDS).
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+  * Tạo các dashboard và thông tin chi tiết tương tác.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Phương pháp di chuyển: Hiểu các giai đoạn kỹ thuật và lập kế hoạch di chuyển khối lượng công việc sang AWS:
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+  * Tìm hiểu các trường hợp sử dụng và giới hạn của Dịch vụ Di chuyển Cơ sở dữ liệu AWS (DMS).
 
-
+  * Nghiên cứu các công cụ chuyển đổi máy ảo (VM Import/Export).

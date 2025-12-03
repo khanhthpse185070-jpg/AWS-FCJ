@@ -26,7 +26,7 @@ pre: " <b> 1.3. </b> "
 
 ### Kết quả đạt được tuần 3:
 
-* Thiết kế Chính sách IAM: Đã có thể viết, kiểm tra và áp dụng các Chính sách IAM phức tạp:
+* Thiết kế Chính sách IAM: Có thể viết, kiểm tra và áp dụng các Chính sách IAM phức tạp:
 
    * Tạo các chính sách tùy chỉnh bằng cú pháp JSON để thực thi các quy tắc truy cập nghiêm ngặt, chi tiết.
 

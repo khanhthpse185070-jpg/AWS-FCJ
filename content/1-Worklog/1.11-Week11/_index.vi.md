@@ -12,48 +12,38 @@ pre: " <b> 1.11. </b> "
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thiết kế, triển khai và viết tài liệu cho Ứng dụng Web 3-Tầng, cuối cùng hoàn toàn thông qua laC.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Thiết kế Sơ đồ Kiến trúc 3-Tầng cho Dự án Cuối kỳ.                                                                                             | 14/11/2025   | 17/11/2025      |
+| 3   | - Hoàn thiện CloudFormation Template tổng hợp (Mạng, ASG, RDS).                                            | 17/11/2025   | 18/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Triển khai toàn bộ Stack và gỡ lỗi (Troubleshoot) các vấn đề.	 | 18/11/2025   | 19/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Tối ưu hóa hiệu suất và chi phí của dự án.                  | 19/11/2025   | 20/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - Viết tài liệu kỹ thuật chi tiết cho Dự án.                                                                                         | 20/11/2025   | 21/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Phát triển chu trình Hoàn chỉnh: Quản lý thành công toàn bộ chu trình triển khai của một Ứng dụng Web 3-Tầng phức tạp:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+  * Tích hợp các tầng mạng, điện toán và cơ sở dữ liệu.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Tích hợp IaC Nâng cao: Tạo một template CloudFormation tổng thể:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+  * Điều phối liền mạch việc triển khai toàn bộ stack cơ sở hạ tầng.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+  * Xác nhận việc triển khai mạng, điện toán (ALB, ASG), cơ sở dữ liệu (RDS) và các quyền IAM cần thiết.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Điều chỉnh Hiệu suất: Thực hiện các bước tối ưu hóa:
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+  * Tinh chỉnh các quy tắc Nhóm bảo mật và xác minh mức sử dụng tài nguyên.
+
+  * Đảm bảo ứng dụng đáp ứng các số liệu hiệu suất được xác định trong phạm vi ngân sách.
+
+* Tài liệu Chuyên nghiệp: Tạo ra một bộ tài liệu kỹ thuật chất lượng cao:
+
+  * Bao gồm sơ đồ kiến trúc, giải thích chi tiết template CFN và sổ tay triển khai.
 
 
