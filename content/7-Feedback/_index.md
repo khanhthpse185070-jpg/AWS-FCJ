@@ -15,33 +15,45 @@ pre: " <b> 7. </b> "
 ### Overall Evaluation
 
 **1. Working Environment**  
-The working environment is very friendly and open. FCJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+The environment at FCJ (AWS) is extremely dynamic and tech-centric. The workspace encourages **Open Communication**, making it easy for me to exchange ideas with other teams. Although the work pressure to meet project milestones was high, the enthusiastic support from seniors created a positive and highly constructive atmosphere.
 
 **2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+Mentors did not just provide answers when I encountered bugs; they guided me on how to **"Deep Dive"** to find the root cause myself. This significantly improved my problem-solving skills. The Team Admins were very helpful with resources (AWS credits) and administrative procedures, allowing me to focus entirely on developing the jewelry project.
 
 **3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+The internship work was closely aligned with the Cloud Computing and Web Development foundations I learned at university. Being able to directly build a complete Jewelry E-commerce platform—from database design to deployment on AWS—helped me systematize my theoretical knowledge and fill gaps in my practical skills.
 
 **4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+This was the period where I learned the most about the **Software Development Life Cycle (SDLC)** and **System Architecture**. Beyond hard skills (AWS services, coding), I also practiced discipline in reporting progress and honed my communication skills when presenting technical solutions to the group.
 
 **5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+he culture of **"Ownership"** is very distinct here. Even as an intern, my opinions on sales features or website UI were listened to and respected. When the jewelry project faced technical issues near the deadline, the entire team stayed back to support debugging regardless of their position, creating a strong sense of unity.
 
 **6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+The company provided excellent support regarding **sandbox environments**, allowing me to experiment freely without worrying about incurring extra costs. The weekly internal training workshops **(Tech Talks)** were an invaluable benefit for a fresh graduate like me.
 
 ---
 
 ### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+- What did you find **most satisfying** during your internship?
+
+    * The feeling of doing "real work." I was directly involved in critical modules of the E-commerce project rather than just doing support or administrative tasks. 
+
+- What do you think the company **should improve** for future interns?
+
+    * I think the company could organize more cross-team "Code Review" sessions. This would allow interns to learn from different coding mindsets and system architectures in other projects, rather than being limited to their own scope.
+
+- If recommending to a friend, would you **suggest they intern here**? Why or why not? 
+
+    * Definitely Yes. This is an ideal environment to forge discipline and standard technical thinking right from the start. The pressure here helps interns mature much faster compared to the general standard.
 
 ---
 
 ### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+- Do you have any suggestions to improve the internship experience? 
+    * It would be helpful to have a clear Guideline/SOP regarding reporting styles and formats right from the Onboarding week. This would help interns avoid basic formatting errors and streamline the workflow earlier.
+
+- Would you like to continue this program in the future? 
+    * I strongly desire the opportunity to continue accompanying the company as a Fresher or Collaborator to develop advanced features (such as AI/Recommendation Systems) for this jewelry platform.
+
+- Any other comments (free sharing): I would like to thank the Mentors and the FCJ team for their patience in guiding me over the past 3 months. The straightforward feedback regarding my work ethic and discipline has helped me realize my weaknesses and make positive changes.

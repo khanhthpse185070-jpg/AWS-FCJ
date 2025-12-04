@@ -21,15 +21,15 @@ chapter: false
 
 &emsp; **University:** FPT University
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Security Information
 
-&emsp; **Class:** AWS082025
+&emsp; **Class:** AWS
 
 &emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
 
 &emsp; **Internship Position:** FCJ Cloud Intern
 
-&emsp; **Internship Duration:** From 12/08/2025 to 24/12/2025
+&emsp; **Internship Duration:** From 08/09/2025 to 14/12/2025
 
 ![Your profile picture](/images/phuongkhanh.png)
 
