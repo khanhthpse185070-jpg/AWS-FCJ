@@ -90,7 +90,7 @@ Thị trường bán lẻ trang sức đang nhanh chóng chuyển sang các kên
 
 ## **3. Kiến Trúc Giải Pháp**
 
-![Sơ Đồ Kiến Trúc Nền Tảng](/images/2-Proposal/AWS_Architecture.jpg)
+![Sơ đồ kiến trúc](/images/image7.png)
 
 ### **3.1 Tổng Quan Kiến Trúc**
 Kiến trúc đề xuất là một nền tảng thương mại điện tử hiệu suất cao được triển khai trên AWS Cloud (Khu vực Singapore) sử dụng thiết kế SPA/microservices tách biệt. Điều này cho phép xử lý động và khả năng mở rộng cao:

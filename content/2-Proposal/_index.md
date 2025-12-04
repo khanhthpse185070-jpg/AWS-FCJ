@@ -90,7 +90,7 @@ The jewelry retail market is rapidly shifting to online channels, driven by cons
 
 ## **3. Solution Architecture**
 
-![Platform Architecture Diagram](/images/2-Proposal/AWS_Architecture.jpg)
+![Platform Architecture Diagram](/images/image7.png)
 
 ### **3.1 Architecture Overview**
 The proposed architecture is a high-performance e-commerce platform deployed on the AWS Cloud (Singapore Region) using a separated SPA/microservices design. This enables dynamic processing and high scalability:
