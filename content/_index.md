@@ -21,7 +21,7 @@ chapter: false
 
 &emsp; **University:** FPT University
 
-&emsp; **Major:** Security Information
+&emsp; **Major:** Information Assurance
 
 &emsp; **Class:** AWS
 

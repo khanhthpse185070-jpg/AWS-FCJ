@@ -24,10 +24,19 @@ pre: " <b> 4.2. </b> "
 
 ### Danh Sách Diễn Giả
 
-- **Nguyen Tuan Thinh** – Cloud Engineer Trainee
-- **Tran Duc Anh** – Cloud Security Engineer Trainee
-- **Nguyen Do Thanh Dat** – Cloud Engineer Trainee
-- **Kha Van** - Community Leader AWS
+| Tên Diễn giả | Chức danh | Tổ chức |
+| :--- | :--- | :--- |
+| **Nguyễn Tuấn Huy** | Giám đốc Chuyển đổi Số | Mobifone |
+| **Minh Hoàng** | Giám đốc Dữ liệu | Techcom Securities |
+| **Vincent Nguyễn** | Giám đốc Điều hành | Nam Long Commercial Property |
+| **Seunghoon Chae** | Tổng Giám đốc | MegazoneCloud Việt Nam |
+| **Uy Trần** | Đồng sáng lập & COO | Katalon |
+| **Thái Huy Chương** | Trưởng Bộ phận Phát triển Ứng dụng | Bảo Việt Holdings |
+| **Trần Đình Khiêm** | Giám đốc Ngân hàng Số | Techcombank |
+| **Christopher Bennett** | Giám đốc Công nghệ | TymeX |
+| **Selma Belhadjamor** | Nhà Khoa học Dữ liệu Chính | Onebyzero |
+| **Ngô Mạnh Hà** | Đồng CEO, CTO | TechX Corp |
+| **Nguyễn Thanh Bình** | Trưởng Bộ phận DevOps | Renova Cloud |
 
 ### Nội Dung Nổi Bật
 
@@ -159,5 +168,7 @@ Tham gia workshop **“DevOps on AWS”** là một trải nghiệm rất bổ �
 - Observability là bắt buộc đối với Microservices; nếu không có Tracing, việc debug giống như "mò kim đáy bể".
 
 #### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
+
+![Your profile picture](/images/event2.png)
+
 > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.

@@ -24,10 +24,21 @@ pre: " <b> 4.1. </b> "
 
 ### Danh Sách Diễn Giả
 
-- **Nguyen Tuan Thinh** – Cloud Engineer Trainee
-- **Tran Duc Anh** – Cloud Security Engineer Trainee
-- **Nguyen Do Thanh Dat** – Cloud Engineer Trainee
-- **Kha Van** - Community Leader AWS
+| Tên Diễn giả | Chức danh | Tổ chức |
+| :--- | :--- | :--- |
+| **P.G.S.TS. Phạm Đức Long** | Thứ trưởng Bộ Khoa học và Công nghệ | Bộ Khoa học và Công nghệ |
+| **H.E. Marc E. Knapper** | Đại sứ Hoa Kỳ tại Việt Nam | Đại sứ quán Hoa Kỳ tại Việt Nam |
+| **Jaime Valles** | Phó Chủ tịch, Tổng Giám đốc Châu Á Thái Bình Dương & Nhật Bản | AWS |
+| **Jeff Johnson** | Giám đốc Điều hành ASEAN | AWS |
+| **Dr. Jens Lottner** | Tổng Giám đốc Điều hành | Techcombank |
+| **Dieter Botha** | CEO | TymeX |
+| **Trang Phùng** | CEO | U2U Network |
+| **Vũ Văn** | Đồng sáng lập & CEO | ELSA Corp |
+| **Nguyễn Hòa Bình** | Chủ tịch | Nexttech Group |
+| **Gia Hiếu Đinh** | Giám đốc Công nghệ Thông tin | F88 |
+| **Nguyễn Hồng Phương Huy** | Trưởng Bộ phận Hạ tầng Cloud & An ninh mạng | Masterise Group |
+| **Nguyễn Vũ Hoàng** | Trưởng Bộ phận Công nghệ | VTV Digital |
+| **Hà Anh Văn** | Trưởng Phòng: Giải pháp CNTT | Honda Việt Nam |
 
 ### Nội Dung Nổi Bật
 
@@ -163,5 +174,7 @@ Phiên Q&A về "Các lỗi thường gặp trong doanh nghiệp Việt" đưa r
 - Ứng phó sự cố hiệu quả dựa rất nhiều vào sự chuẩn bị (Playbooks) và tự động hóa; cố gắng tìm giải pháp trong khi đang bị tấn công là quá muộn.
 
 #### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
+
+![Your profile picture](/images/event1.png)
+
 > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.

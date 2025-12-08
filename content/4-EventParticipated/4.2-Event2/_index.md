@@ -23,11 +23,19 @@ pre: " <b> 4.2. </b> "
 - Demonstrate strategies for application modernization using Containers and establishing full-stack **Observability**.
 
 ### Speakers
-
-- **Nguyen Tuan Thinh** – Cloud Engineer Trainee
-- **Tran Duc Anh** – Cloud Security Engineer Trainee
-- **Nguyen Do Thanh Dat** – Cloud Engineer Trainee
-- **Kha Van** - Community Leader AWS
+| Speaker Name | Title | Organization |
+| :--- | :--- | :--- |
+| **Nguyen Tuan Huy** | Director of Digital Transformation | Mobifone |
+| **Minh Hoang** | Chief Data Officer | Techcom Securities |
+| **Vincent Nguyen** | Managing Director | Nam Long Commercial Property |
+| **Seunghoon Chae** | General Director | MegazoneCloud Vietnam |
+| **Uy Tran** | Co-Founder & COO | Katalon |
+| **Thai Huy Chuong** | Head of Application Development | Bao Viet Holdings |
+| **Tran Dinh Khiem** | Digital Bank Director | Techcombank |
+| **Christopher Bennett** | Chief Technology Officer | TymeX |
+| **Selma Belhadjamor** | Principal Data Scientist | Onebyzero |
+| **Ngo Manh Ha** | Co-CEO, CTO | TechX Corp |
+| **Nguyen Thanh Binh** | Head of DevOps | Renova Cloud 
 
 ### Key Highlights
 
@@ -158,6 +166,6 @@ Event Experience Attending the "DevOps on AWS" workshop provided a comprehensive
 
 - Observability is mandatory for Microservices; without Tracing, debugging is like "finding a needle in a haystack."
 #### Some event photos
-*Add your event photos here*  
+![Your profile picture](/images/event2.png) 
 
 > Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.

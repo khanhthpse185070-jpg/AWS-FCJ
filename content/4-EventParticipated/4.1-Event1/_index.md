@@ -24,10 +24,23 @@ pre: " <b> 4.1. </b> "
 
 ### Speakers
 
-- **Nguyen Tuan Thinh** – Cloud Engineer Trainee
-- **Tran Duc Anh** – Cloud Security Engineer Trainee
-- **Nguyen Do Thanh Dat** – Cloud Engineer Trainee
-- **Kha Van** - Community Leader AWS
+| Speaker Name | Title | Organization |
+| :--- | :--- | :--- |
+| **H.E. Pham Duc Long** | Deputy Minister of Science and Technology | Ministry of Science and Technology |
+| **H.E. Marc E. Knapper** | U.S. Ambassador to Vietnam | U.S. Embassy in Vietnam |
+| **Jaime Valles** | VP, General Manager Asia Pacific & Japan | AWS |
+| **Jeff Johnson** | Managing Director ASEAN | AWS |
+| **Dr. Jens Lottner** | Chief Executive Officer | Techcombank |
+| **Dieter Botha** | CEO | TymeX |
+| **Trang Phung** | CEO | U2U Network |
+| **Vu Van** | Co-founder & CEO | ELSA Corp |
+| **Nguyen Hoa Binh** | Chairman | Nexttech Group |
+| **Gia Hieu Dinh** | Chief Information Officer | F88 |
+| **Nguyen Hong Phuong Huy** | Head of Cloud Infrastructure & Cyber Security | Masterise Group |
+| **Nguyen Vu Hoang** | Head of Technologies | VTV Digital |
+| **Ha Anh Van** | Head: IT Solutions Department | Honda Vietnam |
+
+
 
 ### Key Highlights
 
@@ -158,6 +171,6 @@ Attending the **“AWS Well-Architected Security Pilar”** session was highly e
 
 - Effective Incident Response relies heavily on preparation (Playbooks) and automation; trying to figure out what to do during an attack is too late.
 #### Some event photos
-*Add your event photos here*  
-
+ 
+![Your profile picture](/images/event1.png)
 > Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
