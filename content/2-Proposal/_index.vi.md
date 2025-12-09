@@ -11,291 +11,246 @@ pre: " <b> 2. </b> "
 
 Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
 
-# **Nền Tảng Thương Mại Điện Tử Trang Sức**  
-## **Hệ Thống Bán Hàng Trực Tuyến Dựa Trên Cloud Sử Dụng React, .NET và MySQL trên AWS Lightsail**  
+# **Nền tảng thương mại điện tử trang sức** 
 
----
+## **Hệ thống bán hàng trực tuyến trên nền tảng đám mây sử dụng React, .NET và MySQL trên AWS Lightsail** 
 
-## **1. Tổng Quan Dự Án**
+# AWS First Cloud AI Journey – **Project Plan**
 
-Nền Tảng Thương Mại Điện Tử Trang Sức là một hệ thống bán lẻ trực tuyến hiện đại được xây dựng trên cơ sở hạ tầng đám mây, được thiết kế dành cho các doanh nghiệp trang sức vừa và nhỏ. Dự án nhằm mục đích giúp các doanh nghiệp này chuyển đổi từ mô hình bán hàng truyền thống sang một môi trường kỹ thuật số an toàn, linh hoạt và tự động hóa.  
+# T1VN – FPT University – Video Share
 
-Nền tảng tích hợp giao diện front-end ReactJS, backend .NET Core được lưu trữ trên Amazon Lightsail, và cơ sở dữ liệu MySQL để quản lý sản phẩm, người dùng và đơn hàng một cách hiệu quả.  
+# 09/12/2025
 
-Các tài nguyên tĩnh như hình ảnh sản phẩm và nội dung web được lưu trữ trên Amazon S3 và phân phối toàn cầu thông qua Amazon CloudFront, đảm bảo tốc độ và bảo mật tối ưu. Amazon Cognito xử lý xác thực người dùng, trong khi Amazon CloudWatch, AWS CloudTrail và Lightsail Snapshots cung cấp giám sát, kiểm toán và khôi phục thảm họa.  
+# Mục lục
 
-Dự án này cung cấp một giải pháp thương mại điện tử tiết kiệm chi phí, dễ vận hành và có khả năng mở rộng được thiết kế riêng cho các doanh nghiệp trang sức vừa và nhỏ.  
+**[1 BỐI CẢNH VÀ ĐỘNG LỰC 3](#background-and-motivation)**
 
-### **Mục Tiêu Dự Án**
-- Phát triển một trang web thương mại điện tử trang sức responsive, thân thiện với người dùng, hoạt động mượt mà trên mọi thiết bị.  
-- Tập trung hóa quản lý sản phẩm, tồn kho và đơn hàng.  
-- Đảm bảo thời gian hoạt động ≥99.9% thông qua sao lưu và phục hồi tự động.  
-- Duy trì chi phí cơ sở hạ tầng dưới 65 USD/tháng bằng cách sử dụng Lightsail và tài nguyên AWS Free Tier.  
+[1.1 TÓM TẮT ĐIỀU HÀNH 3](#executive-summary)
 
-### **Giá Trị Kinh Doanh**
-Các cửa hàng trang sức nhỏ thường gặp phải những thách thức liên quan đến chi phí cơ sở hạ tầng cao và kiến thức kỹ thuật hạn chế. Giải pháp này giúp:  
-- Giảm chi phí vận hành với mức giá Lightsail có thể dự đoán được.  
-- Tự động hóa các tác vụ lặp đi lặp lại, cải thiện hiệu quả.  
-- Tăng cường niềm tin thương hiệu thông qua sự ổn định của hệ thống và bảo vệ dữ liệu mạnh mẽ.  
+[1.2 TIÊU CHÍ THÀNH CÔNG CỦA DỰ ÁN 3](#heading=)
 
----
+[1.3 GIẢ ĐỊNH 3](#heading=)
 
-## **2. Phân Tích Vấn Đề**
+[**2 SƠ ĐỒ KIẾN TRÚC GIẢI PHÁP / SƠ ĐỒ KIẾN TRÚC 4**](#heading=)
 
-### **2.1 Tình Hình Hiện Tại**
+[2.1 SƠ ĐỒ KIẾN TRÚC KỸ THUẬT 4](#technical-architecture-diagram)
 
-Thị trường bán lẻ trang sức đang nhanh chóng chuyển sang các kênh trực tuyến, được thúc đẩy bởi nhu cầu của người tiêu dùng về cá nhân hóa, minh bạch và trải nghiệm kỹ thuật số chất lượng cao — đặc biệt là ở thế hệ trẻ. Tuy nhiên, hầu hết các hệ thống thương mại điện tử hiện tại đều gặp phải những hạn chế nghiêm trọng:
+[2.2 KẾ HOẠCH KỸ THUẬT 4](#technical-plan)
 
-- Trải nghiệm người dùng kém: Tải trang chậm, thiết kế lỗi thời và thiếu các tính năng tương tác như thử đeo AR.  
-- Thiếu niềm tin: Khách hàng do dự mua các sản phẩm có giá trị cao (vàng, kim cương) do lo ngại về bảo mật dữ liệu và tính xác thực.  
-- Cơ sở hạ tầng không an toàn, lỗi thời: Nhiều hệ thống cũ lưu trữ mật khẩu hoặc dữ liệu khách hàng dưới dạng văn bản thuần túy, khiến chúng dễ bị tấn công và hạn chế khả năng mở rộng.  
+[2.3 KẾ HOẠCH DỰ ÁN 5](#heading=)
 
----
+[2.4 NHỮNG CÂN NHẮC VỀ AN NINH 5](#security-considerations)
 
-### **2.2 Những Thách Thức Chính**
+[**3 HOẠT ĐỘNG VÀ SẢN PHẨM GIAO 6**](#hoạt-động-và-sản-phẩm)
 
-- **Tốc độ và độ tin cậy:**  
-  Trang sức phụ thuộc rất nhiều vào hình ảnh độ phân giải cao và nội dung tương tác (ví dụ: xem 360°, thử đeo AR). Không có CDN toàn cầu, việc tải nội dung như vậy trở nên chậm và không đáng tin cậy, dẫn đến tỷ lệ bỏ giỏ hàng cao.  
+[3.1 HOẠT-ĐỘNG VÀ SẢN PHẨM GIAO 6](#hoạt-động-và-sản-phẩm-1)
 
-- **Rủi ro bảo mật và gian lận:**  
-  Các nền tảng thương mại điện tử là mục tiêu chính cho các cuộc tấn công mạng. Không có Tường lửa Ứng dụng Web (WAF), hệ thống bị lộ với SQL injection, cross-site scripting và vi phạm dữ liệu. Lưu trữ thông tin đăng nhập trực tiếp trong mã gây ra rủi ro nghiêm trọng về truy cập trái phép.  
+[3.2 NGOÀI PHẠM VI 8](#ngoài-phạm-vi)
 
-- **Vấn đề mất dữ liệu và khôi phục:**  
-  Các giao dịch và hồ sơ tồn kho phải chính xác 100%. Lưu trữ cục bộ có nguy cơ mất dữ liệu vĩnh viễn nếu phần cứng gặp sự cố. Không có lưu trữ bền vững như Amazon S3, dữ liệu quan trọng như hóa đơn và hình ảnh sản phẩm có thể trở nên không thể khôi phục được.  
+[3.3 ĐƯỜNG DẪN ĐẾN SẢN XUẤT 8](#đường-dẫn-đến-sản-xuất)
 
-- **Giám sát và kiểm soát hạn chế:**  
-  Không có các công cụ giám sát tập trung như CloudWatch, người vận hành chỉ có thể phát hiện sự cố sau khi khách hàng báo cáo, làm tăng MTTR (Thời gian Trung bình để Khôi phục) và làm tổn hại lòng tin của người dùng.  
+[**4 PHÂN TÍCH CHI PHÍ DỰ KIẾN CỦA AWS THEO DỊCH VỤ 9**](#phân-tích-chi-phí-aws-dự-đoán-theo-dịch-vụ)
 
----
+[**5 NHÓM 10**](#nhóm)
 
-### **2.3 Tác Động Đến Các Bên Liên Quan**
+[**6 TÀI NGUYÊN & ƯỚC TÍNH CHI PHÍ 10**](#tài-nguyên-&-ước-tính-chi-phí)
 
-| **Bên liên quan** | **Tác động chính** |
-|------------------|----------------|
-| Khách hàng | Có được sự tự tin thông qua mua sắm trực tuyến nhanh chóng, minh bạch và an toàn. |
-| Đội ngũ Vận hành | Giám sát hệ thống dễ dàng hơn, với các quy trình sao lưu và khôi phục tự động. |
-| Lập trình viên | Phát triển nhanh hơn thông qua kiến trúc module với API Gateway và Lightsail. |
-| Chủ doanh nghiệp | Hoạt động kinh doanh liên tục, giảm rủi ro mất dữ liệu và lợi thế cạnh tranh mạnh hơn. |
+[**7 CHẤP NHẬN 11**](#acceptance)
 
----
+# **BỐI CẢNH VÀ ĐỘNG LỰC**
 
-### **2.4 Hậu Quả Kinh Doanh**
+## 1. **TÓM TẮT TỔNG QUAN**
 
-- **Mất doanh thu:** Hiệu suất chậm và UX kém làm giảm tỷ lệ chuyển đổi và tăng tỷ lệ bỏ giỏ hàng.  
-- **Rủi ro về danh tiếng và tuân thủ:** Vi phạm dữ liệu (do thiếu WAF hoặc Secrets Manager) có thể dẫn đến các hình phạt nặng và thiệt hại thương hiệu lâu dài — đặc biệt trong lĩnh vực hàng xa xỉ.  
-- **Chi phí vận hành cao hơn:** Thiếu giám sát tự động và sao lưu làm tăng nhân lực và thời gian khôi phục.  
-- **Khả năng mở rộng hạn chế:** Các hệ thống cũ không thích ứng được với tốc độ tăng trưởng thị trường nhanh, gây ra cơ hội kinh doanh bị bỏ lỡ.  
+Dự án Web Trang sức AWS bao gồm việc phát triển một Nền tảng Thương mại Điện tử Trang sức toàn diện. Kiến trúc hệ thống bao gồm cơ sở hạ tầng backend và cơ sở dữ liệu được lưu trữ trên AWS Lightsail, kết hợp với frontend dựa trên React được triển khai thông qua Amazon S3 và CloudFront. Kiến trúc này được thiết kế để đảm bảo khả năng mở rộng, bảo mật cao và tối ưu hóa chi phí vận hành bằng cách tận dụng các dịch vụ đám mây thiết yếu nhưng hiệu quả cao.
 
----
+**Hệ thống cung cấp các tính năng chính như:**
 
-## **3. Kiến Trúc Giải Pháp**
+* Quản lý sản phẩm trang sức.
 
-![Sơ đồ kiến trúc](/images/image7.png)
+* Khả năng tải lên hình ảnh sản phẩm.
 
-### **3.1 Tổng Quan Kiến Trúc**
-Kiến trúc đề xuất là một nền tảng thương mại điện tử hiệu suất cao được triển khai trên AWS Cloud (Khu vực Singapore) sử dụng thiết kế SPA/microservices tách biệt. Điều này cho phép xử lý động và khả năng mở rộng cao:
+* Chức năng giỏ hàng.
 
-- **Phân Phối Frontend Tĩnh:** Các file frontend React (HTML, CSS, JS) được lưu trữ trên S3 và phục vụ qua CloudFront CDN để phân phối toàn cầu với độ trễ thấp.  
-- **Xử Lý Backend Động:** Logic nghiệp vụ và dữ liệu (danh mục, giỏ hàng, đơn hàng) được xử lý thông qua API .NET được lưu trữ trên Lightsail, được hiển thị an toàn qua API Gateway.  
+* Đăng ký và xác thực người dùng thông qua AWS Cognito.
 
----
+* Các hoạt động API backend trên Lightsail với lưu trữ dữ liệu MySQL/Postgres.
 
-### **3.2 Các Dịch Vụ AWS Được Sử Dụng**
+* Tăng tốc phân phối nội dung và xử lý SSL tiêu chuẩn quốc tế thông qua CDN.
 
-| **Danh mục** | **Dịch vụ AWS** | **Chức năng chính** |
-|---------------|----------------|----------------------|
-| Mạng & Edge | Route 53, CloudFront, WAF, ACM | Định tuyến DNS, phân phối CDN, bảo vệ web, quản lý SSL |
-| Tính toán & API | API Gateway, Lightsail | Quản lý điểm cuối API và lưu trữ ứng dụng backend |
-| Danh tính & Truy cập | Cognito, Secrets Manager | Xác thực/ủy quyền và quản lý thông tin đăng nhập an toàn |
-| Lưu trữ & Cơ sở dữ liệu | S3, Lightsail MySQL | Lưu trữ tài sản tĩnh và cơ sở dữ liệu quan hệ cho dữ liệu giao dịch |
-| Khả năng phục hồi & Sao lưu | AWS Backup, S3 Versioning, Glacier, Lightsail Snapshots | Sao lưu tự động, lưu trữ và kiểm soát phiên bản dữ liệu |
-| Giám sát & Kiểm toán | CloudWatch, CloudTrail | Theo dõi hiệu suất thời gian thực và kiểm toán hoạt động API |
+## 2.**TIÊU CHÍ THÀNH CÔNG CỦA DỰ ÁN**
 
----
+* **Hiệu suất:** Thời gian tải trang web dưới 2 giây khi truy cập quốc tế, được hỗ trợ bởi CloudFront CDN.
+* **Độ ổn định:** Phần backend hoạt động ổn định trên Lightsail trong điều kiện lưu lượng truy cập thực tế.
+* **Tính toàn vẹn dữ liệu:** Bảo mật các hoạt động cơ sở dữ liệu với tốc độ truy xuất nhanh chóng.
+* **Quản lý người dùng:** Quản lý người dùng ổn định và bảo mật thông qua Amazon Cognito.
+* **Bảo mật:** Quy trình tải lên hình ảnh an toàn thông qua Amazon S3.
+* **Giám sát:** Ghi nhật ký API toàn diện thông qua Amazon CloudWatch.
 
-### **3.3 Thiết Kế Thành Phần**
+## 3.**GIẢ ĐỊNH**
 
-- **Lớp Trình bày (Frontend):** Trang web React tĩnh được lưu trữ trên S3, phân phối qua CloudFront. AWS WAF cung cấp bảo vệ cấp edge khỏi các lỗ hổng phổ biến.  
-- **Lớp Ứng dụng (Backend):** API Gateway xác thực token Cognito, quản lý yêu cầu API và thực thi throttling. Lightsail Instance (Ubuntu) chạy API .NET Core để xử lý logic nghiệp vụ (đơn hàng, sản phẩm, thanh toán).  
-- **Lớp Dữ liệu:** Cơ sở dữ liệu MySQL trên Lightsail quản lý tất cả dữ liệu quan hệ; thông tin đăng nhập được lưu trữ an toàn trong Secrets Manager. Amazon S3 lưu trữ tải lên của người dùng, hình ảnh sản phẩm và các tài sản tĩnh khác.  
+* **Lưu lượng truy cập:** Mức lưu lượng truy cập trung bình (dưới 100.000 yêu cầu/tháng).
+* **Khả năng mở rộng:** Không yêu cầu cấu hình tự động mở rộng nâng cao.
+* **Tên miền:** Tên miền đã được mua trước hoặc sẽ được mua thông qua Amazon Route 53.
 
----
+* **Năng lực:** Đội ngũ phát triển có trình độ thành thạo về Node.js và React.
 
-### **3.4 Kiến Trúc Bảo Mật**
+# **SƠ ĐỒ KIẾN TRÚC GIẢI PHÁP / SƠ ĐỒ KIẾN TRÚC**
 
-- **Bảo vệ Edge:** WAF lọc các yêu cầu độc hại; ACM thực thi mã hóa HTTPS.  
-- **Xác thực Người dùng:** Tất cả đăng nhập và đăng ký được xử lý bởi Cognito với xác thực token an toàn.  
-- **Bảo mật Cơ sở hạ tầng:** Secrets Manager đảm bảo thông tin đăng nhập nhạy cảm không bao giờ được lưu trữ dưới dạng văn bản thuần túy.  
-- **Kiểm toán:** CloudTrail ghi lại mọi lời gọi API để tuân thủ và truy xuất nguồn gốc.  
+## 1.**SƠ ĐỒ KIẾN TRÚC KỸ THUẬT**
 
----
+![Kiến trúc](/images/imageworkshop.png)
 
-### **3.5 Khả Năng Mở Rộng và Khả Năng Quan Sát**
+## 2.**KẾ HOẠCH KỸ THUẬT**
 
-- Khả năng mở rộng toàn cầu thông qua bộ nhớ cache và phân phối CloudFront.  
-- Tăng trưởng lưu trữ không giới hạn trên S3 cho các tài sản media.  
-- Giám sát tài nguyên thông qua các chỉ số CloudWatch, cho phép các quyết định mở rộng chủ động.  
+* **Giao diện người dùng:** Được lưu trữ trên Amazon S3 với Amazon CloudFront CDN và HTTPS được kích hoạt thông qua AWS Certificate Manager (ACM).
 
----
+* **API Backend:** Môi trường thời gian chạy .NET trên AWS Lightsail.
 
-## **4. Kế Hoạch Triển Khai Kỹ Thuật**
+* **Cơ sở dữ liệu:** MySQL/PostgreSQL được lưu trữ trên AWS Lightsail.
 
-| **Giai đoạn** | **Thời gian** | **Mục tiêu** | **Sản phẩm bàn giao** | **Tiêu chí thành công** |
-|------------|---------------|-----------|------------------|----------------------|
-| 1. Thiết lập Cơ sở hạ tầng | Tuần 1–2 | Cấu hình môi trường AWS | S3, CloudFront, Cognito, Route 53, SSL | Môi trường ổn định |
-| 2. Phát triển Backend | Tuần 3–5 | Xây dựng API .NET & schema MySQL | Chức năng CRUD, cơ sở dữ liệu | Backend hoạt động |
-| 3. Tích hợp Frontend | Tuần 6–7 | Kết nối React SPA với API | Đăng nhập, trang giao diện | Giao diện hoạt động |
-| 4. Module Tải lên Hình ảnh | Tuần 8–9 | Kích hoạt tải lên S3 | Kiểm tra tải lên thành công | Đạt |
-| 5. Giám sát & Sao lưu | Tuần 10–11 | Cấu hình CloudWatch & Snapshots | Cảnh báo và sao lưu tự động | Hệ thống ổn định |
-| 6. Kiểm thử & Triển khai | Tuần 12–14 | QA và phát hành cuối cùng | Demo và tài liệu | Hệ thống hoàn chỉnh ổn định |
+* **Xác thực:** Nhóm người dùng Amazon Cognito.
 
----
+* **Lưu trữ hình ảnh:** Amazon S3.
 
-## **5. Lộ Trình & Các Cột Mốc Quan Trọng**
+* **Ghi nhật ký:** Amazon CloudWatch.
 
-Dự án sẽ kéo dài 14 tuần (Tháng 9–Tháng 12 năm 2025), được chia thành sáu sprint Agile–Scrum.
+* **Quản lý bí mật:** AWS Secrets Manager.
 
-| **Sprint** | **Sản phẩm bàn giao** | **Tiêu chí thành công** |
-|-------------|-----------------|----------------------|
-| Sprint 1 – Nền tảng | Thiết lập AWS (Lightsail, S3, CloudFront, Cognito, Route53) | Trang web React được phục vụ qua HTTPS; Kiểm tra đăng nhập Cognito thành công |
-| Sprint 2 – Backend & DB | API .NET và schema MySQL | Các thao tác CRUD hoạt động chính xác |
-| Sprint 3 – Frontend | Các trang React tích hợp với API | Hiển thị sản phẩm và giỏ hàng hoạt động |
-| Sprint 4 – Media & Email | Thiết lập tải lên S3 + email SES | Phân phối hình ảnh qua CDN; email đơn hàng được gửi thành công |
-| Sprint 5 – Thanh toán & Đặt hàng | Hoàn thành luồng đơn hàng | Thanh toán và xác nhận đơn hàng hoạt động |
-| Sprint 6 – Kiểm thử & Giám sát | Hệ thống hoạt động đầy đủ | Nhật ký CloudWatch và sao lưu được xác minh |
+## 3.**KẾ HOẠCH DỰ ÁN**
 
----
+Thời gian triển khai ước tính từ 6 đến 12 tuần, tùy thuộc vào phạm vi dự án cuối cùng.
 
-## **6. Dự Toán Ngân Sách**
+## 4.**CÂN NHẮC BẢO MẬT**
 
-| **Dịch vụ** | **Mô tả** | **Chi phí Ước tính Hàng tháng (USD)** | **Ghi chú** |
-|--------------|----------------|----------------------------------|------------|
-| Lightsail Instance (API .NET) | 2–4 vCPU, 4–8 GB RAM | $10–$40 | Khuyến nghị gói ≥$20 |
-| Cơ sở dữ liệu Lightsail MySQL | 20–50 GB DB được quản lý | $15–$50 | Nên tách riêng khỏi instance |
-| Amazon S3 | Lưu trữ file tĩnh và hình ảnh | $1–$5 | Bao gồm phí yêu cầu |
-| Amazon CloudFront | Phân phối CDN | $1–$30 | 1TB đầu tiên miễn phí/tháng |
-| Route 53 + ACM | Domain và SSL | $1–$4 | ACM miễn phí; domain ~$12/năm |
-| Amazon Cognito | Quản lý người dùng | $0–$10 | 10k người dùng đầu tiên miễn phí |
-| Amazon SES | Thông báo email | $0.10–$5 | 62k email miễn phí nếu lưu trữ trên Lightsail |
-| CloudWatch + CloudTrail | Giám sát và ghi nhật ký | $1–$10 | Phụ thuộc vào khối lượng nhật ký |
-| Sao lưu | Snapshots và versioning | $1–$10 | Khuyến nghị sao lưu tự động hàng tuần |
+* **Kiểm soát truy cập:** Đã cấu hình quyền truy cập riêng tư S3, cấp quyền đọc độc quyền cho CloudFront.
 
-**Tổng ước tính:** $30–$160/tháng (≈ $90–$480 cho 3 tháng)
+* **Quản lý thông tin xác thực:** API sử dụng khóa riêng được lưu trữ an toàn trong AWS Secrets Manager.
+* **Mã hóa:** Triển khai HTTPS toàn hệ thống.
+* **Bảo mật xác thực:** Đăng nhập người dùng được bảo vệ bởi Amazon Cognito.
 
----
+# **HOẠT ĐỘNG VÀ SẢN PHẨM**
 
-### **Mẹo Tối Ưu Hóa Chi Phí**
+## 1.**HOẠT ĐỘNG VÀ SẢN PHẨM**
 
-1. Sử dụng AWS Free Tier cho Lightsail, S3, CloudFront, SES và Cognito.  
-2. Triển khai tại ap-southeast-1 (Singapore) để có độ trễ tối thiểu.  
-3. Áp dụng S3 Lifecycle Policies để chuyển file cũ sang Glacier Deep Archive.  
-4. Kích hoạt cảnh báo thanh toán với AWS Cost Explorer và Budgets.  
-5. Lên lịch snapshot hàng tuần và kích hoạt MFA Delete trên S3.  
+| Giai đoạn dự án | Dòng thời gian | Hoạt động | Sản phẩm/Cột mốc | MD |
+| :---: | :---: | ----- | ----- | :---: |
+| **Đánh giá** | Tuần 1 | \- Phân tích các yêu cầu hệ thống của Trang sức Web. \- Soạn thảo Sơ đồ Kiến trúc. **\-** Thiết kế Sơ đồ Cơ sở dữ liệu (Lightsail MySQL/Postgres). \- Xác định các bí mật cần thiết (Mật khẩu DB, tên bucket). | \- Sơ đồ Kiến trúc \- Sơ đồ DB \- Danh sách Bí mật | **5** |
+| **Thiết lập Cơ sở hạ tầng Cơ sở** | Tuần 2 | \- Cấu hình lưu trữ S3 và bản dựng React. \- Cấu hình CloudFront CDN và ACM SSL. \- Ánh xạ miền thông qua Route 53\. \- Cung cấp phiên bản API Lightsail. \- Cung cấp Cơ sở dữ liệu Lightsail. \- Cấu hình Đăng nhập Cognito. \- Tạo các mục nhập Secrets Manager:   + Secret 1: DB\_PASSWORD   + Secret 2: APP\_CONFIG (bucket-name) \- Gán vai trò IAM cho các phiên bản API để có quyền truy xuất bí mật. \- Bật nhật ký CloudWatch. | \- CDN Frontend chức năng \- API Backend vận hành \- Thiết lập kết nối cơ sở dữ liệu \- Đăng nhập Cognito chức năng \- Secrets Manager được điền mật khẩu DB và tên bucket | **7** |
 
----
+| Thiết lập Thành phần 1 – API Backend | Tuần 3 | \- Triển khai logic API để truy xuất mật khẩu DB từ Secrets Manager. \- Triển khai logic API để truy xuất tên bucket từ Secrets Manager. \- Triển khai tải ảnh lên S3 (thông qua URL được chỉ định trước). \- Phát triển các hoạt động CRUD cho các sản phẩm trang sức. \- Tích hợp xác thực Cognito. \- Triển khai truyền nhật ký đến CloudWatch. | \- Hoạt động API ổn định \- Chức năng tải lên hình ảnh thành công \- Chức năng Đăng nhập thành công \- Cấu hình được mã hóa cứng được thay thế hoàn toàn bằng Secrets Manager | 7 |
+| :---: | :---: | :---- | :---- | :---: |
+| **Thành phần thiết lập 2 – Frontend React** | Tuần 4 | \- Phát triển Giao diện người dùng Cửa hàng Trang sức. \- Triển khai Giao diện đăng nhập Cognito. \- Triển khai Giao diện tải lên hình ảnh trang sức. \- Lấy dữ liệu từ API. \- Xây dựng và triển khai lên S3 \+ CloudFront. | \- Hoàn thiện Giao diện người dùng (UI) \- Thiết lập Tích hợp API | **7** |
+| **Kiểm thử & Go-live** | Tuần 5 | \- Kiểm thử tích hợp (FE ↔ BE ↔ S3 ↔ DB). \- Kiểm thử bảo mật (IAM \+ Secrets Manager). \- Kiểm thử đầu cuối. | \- Báo cáo kiểm thử \- Danh sách kiểm tra bảo mật | **5** |
+| **Bàn giao** | Tuần 6 | \- Cung cấp hướng dẫn sử dụng Secrets Manager để cập nhật tên bucket/mật khẩu DB. \- Chuyển quyền sở hữu tài khoản AWS. \- Cung cấp Tài liệu Runbook. | \- Runbook Toàn diện \- Đóng Dự án | **5** |
 
-## **7. Đánh Giá Rủi Ro**
+##
 
-| **ID Rủi ro** | **Mô tả** | **Mức độ nghiêm trọng** | **Tác động** |
-|--------------|----------------|--------------|-------------|
-| R1 | Lỗi Lightsail instance | Trung bình | Ngừng hoạt động tạm thời |
-| R2 | Hỏng cơ sở dữ liệu | Cao | Mất dữ liệu giao dịch |
-| R3 | Rò rỉ thông tin đăng nhập | Trung bình | Rủi ro truy cập trái phép |
-| R4 | Quá tải do lưu lượng tăng đột biến | Trung bình | Trang web chậm hoặc không phản hồi |
+## 2.**NGOÀI PHẠM VI**
 
----
+* Các tính năng AI/Học máy.
+* Các chức năng thương mại điện tử phức tạp.
+* Khả năng xử lý hình ảnh tiên tiến.
+* Triển khai đa vùng hoặc các site Phục hồi Thảm họa (DR).
+* Hệ thống quản trị phức tạp.
+* Tích hợp với các hệ thống của bên thứ ba.
 
-### **7.1 Chiến Lược Giảm Thiểu**
+## 3.**ĐƯỜNG DẪN ĐẾN SẢN XUẤT**
 
-- R1: Snapshot Lightsail hàng ngày và quy trình khôi phục chi tiết.  
-- R2: Sao lưu DB tự động được xuất sang S3 để dự phòng.  
-- R3: Bắt buộc sử dụng Secrets Manager với xoay vòng khóa.  
-- R4: Tối ưu hóa bộ nhớ cache CloudFront và mở rộng Lightsail khi lưu lượng tăng đột biến.  
+* Tối ưu hóa Hoạt động Xuất sắc.
+* Quản lý Bí mật – Củng cố Sản xuất.
+* Xử lý Lỗi Mở rộng.
+* Xác minh Triển khai & Sản xuất.
+* Kế hoạch Phục hồi Thảm họa.
+* Bàn giao Sản xuất.
 
----
+# **PHÂN TÍCH CHI PHÍ AWS DỰ KIẾN THEO DỊCH VỤ**
 
-### **7.2 Kế Hoạch Dự Phòng**
+| Tên dịch vụ | Chi phí trả trước | Chi phí hàng tháng | Khu vực |
+| :---- | :---- | :---- | :---- |
+| Amazon S3 | 0.00 USD | 0.26 USD | Châu Á Thái Bình Dương (Singapore) |
+| Amazon CloudFront (CDN cho FE) | 0,00 USD | 0,17 USD | Châu Á - Thái Bình Dương (Singapore) |
+| AWS ACM | 0,00 USD | 0 USD | Châu Á - Thái Bình Dương (Singapore) |
+| Amazon Route 53 | 0,00 USD | 0,50–1,00 USD | Châu Á - Thái Bình Dương (Singapore) |
+| AWS Lightsail – Cơ sở dữ liệu | 0,00 USD | 10–15 USD | Châu Á - Thái Bình Dương (Singapore) |
+| Amazon Cognito | 0,00 USD | 2,00 USD | Châu Á - Thái Bình Dương (Singapore) |
+| AWS Secrets Manager | 0,00 USD | 0,40 USD | Châu Á - Thái Bình Dương (Singapore) |
+| Amazon CloudWatch | 0,00 USD | 0,30 USD | Châu Á - Thái Bình Dương (Singapore) |
+| AWS Lightsail – Máy chủ API | 0,00 USD | 5 \- 10 USD | Châu Á - Thái Bình Dương (Singapore) |
 
-- Khôi phục Hệ thống: Khôi phục instance từ snapshot mới nhất trong vòng 4 giờ.  
-- Khôi phục Dữ liệu: Khôi phục sao lưu MySQL được lưu trữ trong S3.  
-- Tính liên tục: Phục vụ trang bảo trì qua S3 + CloudFront trong thời gian ngừng hoạt động.  
-- Sự cố Bảo mật: Xoay vòng khóa và điều tra với nhật ký CloudTrail.  
+# **ĐỘI NGŨ**
 
----
+**Đối tác Tài trợ Điều hành**
 
-### **7.3 Kế Hoạch Giám Sát Rủi Ro**
+| Họ và tên | Chức danh | Mô tả | Email / Thông tin Liên hệ |
+| :---- | :---- | :---- | :---- |
+| | | |
 
-- Giám sát Vận hành: Cảnh báo CloudWatch cho các ngưỡng CPU/mạng.  
-- Đánh giá Bảo mật: Kiểm toán CloudTrail hàng tuần cho các hoạt động API bất thường.  
-- Đánh giá Rủi ro Hàng quý: Đánh giá lại ma trận rủi ro sau các cập nhật lớn.  
+**Các Bên liên quan của Dự án**
 
----
+| Họ và tên | Chức danh | Bên liên quan của | Email / Thông tin Liên hệ |
+| :---- | :---- | :---- | :---- |
+| | | |
 
-## **8. Kết Quả Kỳ Vọng**
+**Nhóm Dự án Đối tác**
 
-### **8.1 Chỉ Số Thành Công (KPIs)**
+| Họ và tên | Chức danh | Vai trò | Email / Thông tin Liên hệ |
+| :---- | :---- | :---- | :---- |
+| Nguyễn Duy Hiếu | Chủ sản phẩm | Quản lý Dự án (BE) | Hieundse185047@fpt.edu.vn |
+| Lưu Ngọc Ngân Giang | Lập trình viên Phần mềm | Lập trình viên (BE) | luungocngangiang25@gmail.com |
+| Nguyễn Huy Hoàng | Lập trình viên Phần mềm | Lập trình viên (FE) | Hoangnhse185092@fpt.edu.vn |
+| Trần Hồ Phương Khánh | Nhà phát triển phần mềm | Nhà phát triển (FE) | khanhthpse185070@fpt.edu.vn |
+| Tăng Khánh Nhi | Nhà phát triển phần mềm | Nhà phát triển (FE) | tangkhanhhi111@gmail.com |
 
-**KPIs Kỹ thuật**
-- Độ trễ Frontend < 200ms (qua CloudFront)  
-- Phản hồi API < 350ms (qua API Gateway + Lightsail)  
-- Thời gian hoạt động 99.9% với khôi phục tự động  
-- 70%+ yêu cầu được phục vụ từ bộ nhớ cache CDN  
-- Không có sự cố bảo mật nghiêm trọng (Cognito + WAF)  
-- RTO < 30 phút, RPO = 0 cho bảo vệ dữ liệu  
+**Địa chỉ liên hệ nâng cao dự án**
 
-**KPIs Kinh doanh**
-- Tăng 20–30% tỷ lệ chuyển đổi  
-- Cải thiện 15–25% tỷ lệ giữ chân khách hàng  
-- Giảm 25–40% chi phí cơ sở hạ tầng  
-- Chi phí giao dịch thấp hơn phù hợp với hiệu quả giá trị AWS  
+| Tên | Tiêu đề | Vai trò | Email / Thông tin liên hệ |
+| :---- | :---- | :---- | :---- |
+| | | | |
 
----
+# **TÀI NGUYÊN & ƯỚC TÍNH CHI PHÍ**
+| Tài nguyên | Trách nhiệm | Giá (USD)/Giờ |
+| :---- | :---- | ----- |
+| Kiến trúc sư Giải pháp \[số lượng nhân sự được phân công\] | \- Thiết kế và kiến ​​trúc hệ sinh thái cơ sở hạ tầng AWS, tích hợp các dịch vụ như S3, CloudFront, Lightsail, ACM, Route 53 và Secrets Manager \- |12|
+| Kiến trúc sư Giải pháp \[số lượng nhân sự được phân công\] |\- Cung cấp tư vấn chiến lược về các giao thức bảo mật và tối ưu hóa chi phí vận hành.|12|
+| Kiến trúc sư Giải pháp \[số lượng nhân sự được phân công\] |\- Thực hiện đánh giá toàn diện các quy trình triển khai để đảm bảo tuân thủ các thông lệ tốt nhất của ngành.|12|
+| Kỹ sư \[số lượng nhân sự được phân công\] | \- Thực hiện việc cung cấp và triển khai các thành phần cơ sở hạ tầng cốt lõi, bao gồm S3, CloudFront, Route 53, ACM và Lightsail. |6|
+| Kỹ sư \[số lượng nhân sự được phân công\] |\- Thiết lập các quy trình Tích hợp Liên tục/Triển khai Liên tục (CI/CD) và tạo điều kiện thuận lợi cho việc triển khai các tài sản giao diện người dùng lên Amazon S3. |6|
+| Kỹ sư \[số lượng nhân sự được phân công\] |\- Triển khai và cấu hình môi trường thời gian chạy API Node.js trong cơ sở hạ tầng AWS Lightsail.|6|
+| Kỹ sư \[số lượng nhân sự được phân công\] |\- Cấu hình quản lý thông tin xác thực an toàn thông qua AWS Secrets Manager và thiết lập cơ chế ghi nhật ký bằng Amazon CloudWatch. | 6 |
+| Khác (Vui lòng ghi rõ) | \- Thực hiện kiểm tra tích hợp và xác minh hệ thống nghiêm ngặt sau khi triển khai.|0|
 
-### **8.2 Lợi Ích Ngắn Hạn (0–6 Tháng)**
+\* Lưu ý: Tham khảo phần “hoạt động & sản phẩm bàn giao” để biết danh sách các giai đoạn của dự án
 
-- Tải trang nhanh hơn 40–70%, tỷ lệ thoát thấp hơn  
-- Giảm tải backend với bộ nhớ cache CDN  
-- Xác thực mạnh mẽ hơn qua Cognito  
-- Cảnh báo và sao lưu tự động với CloudWatch  
-- Triển khai tính năng nhanh hơn nhờ kiến trúc tách rời  
+| Giai đoạn dự án | Kiến trúc sư giải pháp | Kỹ sư | Khác (Vui lòng nêu rõ) | Tổng Số Giờ |
+| :---: | :---: | :---: | :---: | :---: |
+| S3 \+ CloudFront | 1 | 2 | | 3 |
+| API Lightsail \+ DB | 1 | 4 | | 4 |
+| Nhận thức | 1 | 2 | | 5 |
+| Ghi nhật ký & Giám sát | 1 | 1 | | 3 |
+| Tổng số giờ | 4 | 12 | | 15 |
+| Tổng chi phí | | | | |
 
----
+Phân bổ đóng góp chi phí giữa Đối tác, Khách hàng, AWS:
 
-### **8.3 Lợi Ích Trung Hạn (6–18 Tháng)**
+| Bên | Đóng góp (USD) | % Đóng góp trên Tổng |
+| :---- | :---- | :---- |
+| Khách hàng | | |
+| Đối tác | | |
+| AWS | | |
 
-- Chi phí lưu trữ thấp hơn qua vòng đời S3 → Glacier  
-- API ổn định dưới lưu lượng cao  
-- Dự báo chi phí thông qua AWS Cost Explorer  
-- Điều chỉnh hiệu suất liên tục với bảng điều khiển CloudWatch  
-- Giảm khối lượng công việc bảo trì cho lập trình viên  
+# **CHẤP NHẬN**
 
----
+Dự án hoàn thành khi: 9/12/2025
 
-### **8.4 Giá Trị Dài Hạn (18+ Tháng)**
+Website chạy ổn định trên tên miền thật.
 
-- Nền tảng cloud-native có khả năng mở rộng đầy đủ, sẵn sàng mở rộng mobile hoặc marketplace  
-- Sẵn sàng cho AI/ML để đề xuất trang sức cá nhân hóa  
-- Giảm 80–90% chi phí lưu trữ qua lưu trữ Glacier  
-- Bảo mật và tuân thủ cấp doanh nghiệp (IAM, WAF, CloudTrail)  
-- Phạm vi tiếp cận toàn cầu với CloudFront Edge Network  
-- Hoạt động bền vững, kiên cường cho tăng trưởng dài hạn  
+API kết nối hoàn toàn với DB.
 
----
+Tải lên hình ảnh sản phẩm hoạt động.
 
-### **8.5 Cải Thiện Trải Nghiệm Người Dùng**
+Nhật ký CloudWatch & đăng nhập Cognito hoạt động.
 
-- Tải hình ảnh và duyệt sản phẩm nhanh hơn  
-- Đăng nhập và theo dõi đơn hàng mượt mà qua Cognito  
-- Giảm độ trễ và thời gian ngừng hoạt động trong giờ cao điểm  
-- Tăng niềm tin của khách hàng thông qua độ tin cậy cấp AWS  
+Được khách hàng/bên liên quan chấp nhận.
 
----
+## File TEMPLETE DOCX: [DOWLOAD Proposal (DOCX)](https://drive.google.com/drive/folders/1TLXOU4XDvSqv1hfWYhXhWilc5G53iN2H?usp=sharing)
 
-### **8.6 Năng Lực Chiến Lược Đạt Được**
-
-- Kiến trúc cloud-native, sẵn sàng cho sự phát triển microservices  
-- Trưởng thành FinOps với theo dõi chi phí chi tiết  
-- Xuất sắc vận hành thông qua giám sát và kiểm toán tập trung  
-- Cơ sở hạ tầng sẵn sàng cho tương lai có thể mở rộng sang ECS, EKS hoặc RDS  
-- Tuân thủ bảo mật cấp cao sử dụng IAM, Cognito, WAF, Secrets Manager  
-- Nền tảng vững chắc cho phân tích dữ liệu và tích hợp AI
