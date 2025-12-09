@@ -11,23 +11,45 @@ pre: " <b> 5. </b> "
 {{% /notice %}}
 
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# AWS Jewelry Web Workshop
 
-#### Tổng quan
+![Architecture](/images/imageworkshop.png)
+<p align="center"><em>Figure: Simplified AWS Jewelry Web architecture (CloudFront + S3, Lightsail API/DB, Cognito, Secrets, CloudWatch).</em></p>
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+### Tổng quan (Overview)
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Tài liệu workshop này ghi lại dự án AWS Jewelry Web: một stack thương mại điện tử trang sức an toàn, ý thức về chi phí sử dụng các dịch vụ được quản lý của AWS.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+- Frontend (Giao diện người dùng): React SPA trên S3 + CloudFront với TLS của ACM và tên miền Route 53.
 
-#### Nội dung
+- Backend (Hệ thống phụ trợ): Instance Lightsail chạy API .NET; Lightsail MySQL/Postgres cho dữ liệu.
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+- Danh tính (Identity): Amazon Cognito User Pool cho đăng ký/đăng nhập và xác minh JWT trên API.
+
+- Media: S3 bucket riêng tư cho hình ảnh sản phẩm; tải lên thông qua presigned PUT (lệnh PUT được ký trước); CloudFront đọc các đối tượng.
+
+- Bí mật & Khả năng Quan sát: AWS Secrets Manager cho mật khẩu DB và cấu hình bucket; CloudWatch Logs cho nhật ký API/sự kiện nghiệp vụ.
+
+Mục tiêu thiết kế:
+
+- Thời gian tải trang <2 giây trên toàn cầu qua CloudFront.
+
+- API ổn định dưới lưu lượng truy cập dự kiến (dưới 100 nghìn yêu cầu/tháng).
+
+- Các hoạt động DB an toàn; không mã hóa cứng bí mật (chỉ sử dụng Secrets Manager).
+
+- Tải lên an toàn; ghi nhật ký API hoàn chỉnh cho vận hành và phân tích cơ bản.
+
+### Bản đồ Nội dung (Content Map)
+
+**[5.1. Mục tiêu và phạm vi](5.1-objectives--scope/)**
+
+**[5.2. Hướng dẫn kiến trúc](5.2-Architecture-Walkthrough/)**
+
+**[5.3. Thực hiện-Thu thập-Dữ liệu Clickstream](5.3-Implementing-Clickstream-Ingestion/)**
+
+**[5.4. Xây dựng Lớp Phân tích Riêng tư](5.4-Building-the-Private-Analytics-Layer/)**
+
+**[5.5. Trực quan hóa Phân tích bằng Shiny Dashboards](5.5-Visualizing-Analytics-with-Shiny-Dashboards/)**
+
+**[5.6. Tóm tắt & Dọn dẹp](5.6-Summary-&-Clean-up/)**

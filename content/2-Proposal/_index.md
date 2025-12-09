@@ -16,155 +16,200 @@ In this section, you need to summarize the contents of the workshop that you **p
 
 ---
 
-## **1. Project Overview**
+## **1. EXECUTIVE SUMMARY**
 
-Jewelry E-Commerce Platform is a modern online retail system built on a cloud infrastructure, designed for small and medium-sized jewelry businesses. The project aims to help these enterprises transition from traditional sales models to a secure, flexible, and automated digital environment.  
+The AWS Jewelry Web is a project to build a jewelry e-commerce website platform (Jewelry E-commerce Website) with the backend system and database running on AWS Lightsail and the React frontend deployed on Amazon S3 + CloudFront. The system aims for scalability, high security, and optimized operating costs by utilizing basic but effective Cloud services.
 
-The platform integrates a ReactJS front-end, a .NET Core backend hosted on Amazon Lightsail, and a MySQL database for managing products, users, and orders efficiently.  
+The system provides the following main features:
 
-Static assets such as product images and web content are stored on Amazon S3 and globally distributed through Amazon CloudFront, ensuring optimal speed and security. Amazon Cognito handles user authentication, while Amazon CloudWatch, AWS CloudTrail, and Lightsail Snapshots provide monitoring, auditing, and disaster recovery.  
+  * Jewelry product management
 
-This project delivers a cost-effective, easy-to-operate, and scalable e-commerce solution tailored for small and medium jewelry businesses.  
+  * Product image upload
 
-### **Project Objectives**
-- Develop a responsive, user-friendly jewelry e-commerce website that works seamlessly across devices.  
-- Centralize management of products, inventory, and orders.  
-- Ensure ≥99.9% uptime through automated backup and recovery.  
-- Maintain infrastructure costs below USD 65/month using Lightsail and AWS Free Tier resources.  
+  * Shopping cart
 
-### **Business Value**
-Small jewelry shops often face challenges related to high infrastructure costs and limited technical expertise. This solution helps:  
-- Reduce operational costs with predictable Lightsail pricing.  
-- Automate repetitive tasks, improving efficiency.  
-- Enhance brand trust through system stability and robust data protection.  
+  * Sign up / Sign in using AWS Cognito
+
+  * Backend API running on Lightsail and storing MySQL/Postgres data
+
+  * CDN to speed up page loading and handle international standard SSL.
+
+### **1.1 PROJECT SUCCESS CRITERIA**
+  * Fast international website load time < 2s thanks to CloudFront CDN.
+
+  * Backend operates stably on Lightsail with real-world traffic.
+
+  * Database operates securely and retrieves data quickly.
+
+  * Stable user management using Cognito.
+
+  * Image uploads via S3 are secured.
+
+  * Comprehensive API logging via CloudWatch.
+
+### **1.2 ASSUMPTIONS**
+  * Moderate traffic level (<100k requests/month).
+
+  * No advanced autoscaling is required.
+
+  * The Domain is already owned or will be purchased via Route 53.
+
+  * The development team is familiar with Node.js/React.
+
+## **2. SOLUTION ARCHITECTURE / ARCHITECTURAL DIAGRAM**
+
+### **2.1 TECHNICAL ARCHITECTURE DIAGRAM**
+
+
+### **2.2 TECHNICAL PLAN**
+
+  * Frontend: S3 hosting + CloudFront CDN + HTTPS with ACM.
+
+  * Backend API: Running Node.js on Lightsail.
+
+  * Database: MySQL/Postgres on Lightsail.
+
+  * Auth: Cognito User Pool.
+
+  * Image storage: S3.
+
+  * Logging: CloudWatch.
+
+  * Secrets: Secrets Manager.
+
+### **2.3 PROJECT PLAN**
+  * Implementation time is 6 weeks -> 12 weeks depending on the scope.
+
+### **2.4 SECURITY CONSIDERATIONS**
+  * S3 private access, only CloudFront has read permission.
+
+  * API uses private key stored in Secrets Manager.
+
+  * HTTPS across the entire system.
+
+  * Cognito protects user login.
+
+
+## **3. ACTIVITIES AND DELIVERABLES**
+
+### **3.1 ACTIVITIES AND DELIVERABLES**
+
+| Project Phase | Timeline | Activities | Deliverables / Milestones | MD |
+| :--- | :--- | :--- | :--- | :--- |
+| **Assessment** | Week 1 | - Phân tích hệ thống Jewelry Web | - Architecture Diagram | 5 |
+| | | - Vẽ Architecture Diagram | - DB Schema | |
+| | | - Thiết kế DB (Lightsail MySQL/Postgres) | - Danh sách secrets | |
+| | | - Xác định secrets cần sử dụng (DB password, bucket-name) | | |
+| **Setup Base Infrastructure** | Week 2 | - Setup S3 hosting + React build | - Frontend CDN hoạt động | 7 |
+| | | - Setup CloudFront CDN + ACM SSL | - Backend API hoạt động | |
+| | | - Route 53 domain mapping | - DB kết nối | |
+| | | - Setup Lightsail API instance | - Cognito login hoạt động | |
+| | | - Setup Lightsail Database | - Secrets Manager chứa DB password & bucket-name | |
+| | | - Setup Cognito Login | | |
+| | | - Tạo Secrets Manager: + secret 1: DB\_PASSWORD + secret 2: APP\_CONFIG (bucket-name) | | |
+| | | - Gán IAM cho API instance được phép đọc secrets | | |
+| | | - Bật CloudWatch logs | | |
+| **Setup Component 1 – Backend API** | Week 3 | - API đọc DB password từ Secrets Manager | - API hoạt động ổn định | 7 |
+| | | - API đọc bucket-name từ Secrets Manager | - Upload ảnh OK | |
+| | | - Upload ảnh lên S3 (presigned URL) | - Login OK | |
+| | | - CRUD sản phẩm trang sức | - Secrets Manager hoàn toàn thay thế config hardcode | |
+| | | - Tích hợp Cognito | | |
+| | | - Gửi logs lên CloudWatch | | |
+| **Setup Component 2 – Frontend React** | Week 4 | - Xây UI Jewelry Shop | - UI hoàn chỉnh | 7 |
+| | | - Login Cognito | - Kết nối API | |
+| | | - Upload ảnh trang sức | | |
+| | | - Lấy dữ liệu từ API | | |
+| | | - Build deploy lên S3 + CloudFront | | |
+| **Testing & Go-live** | Week 5 | - Integration testing FE ↔ BE ↔ S3 ↔ DB | - Test Report | 5 |
+| | | - Security test IAM + Secrets Manager | - Security checklist | |
+| | | - End-to-end testing | | |
+| **Handover** | Week 6 | - Hướng dẫn dùng Secrets Manager để đổi bucket name/DB password | - Runbook đầy đủ | 5 |
+| | | - Bàn giao AWS account | - Project closure | |
+| | | - Runbook Documentation | | |
+
+### **3.2 OUT OF SCOPE**
+
+  * AI/ML Features.
+
+  * Complex E-commerce Features.
+
+  * Advanced Image Processing.
+
+  * No Multi-region / DR site deployment.
+
+  * No support for complex administration system.
+
+  * Does not include integration of 3rd party systems.
+
+### **3.3 PATH TO PRODUCTION**
+
+  * Operational Excellence Optimization
+
+  * Secrets Management – Production Hardening
+
+  * Extended Error Handling
+
+  * Deployment & Production Verification
+
+  * Disaster Recovery Plan
+
+  * Production Handover
+
+
+## **4. EXPECTED AWS COST BREAKDOWN BY SERVICES**
+
+| Service Name | Upfront cost  | Monthly cost  | Region |
+| :--- | :--- | :--- | :--- |
+| **Amazon S3** | 0.00 USD | 0.26 USD | Asia Pacific (Singapore) |
+| **Amazon CloudFront (CDN for FE)** | 0.00 USD | 0.17 USD | Asia Pacific (Singapore) |
+| **AWS ACM** | 0.00 USD | 0 USD | Asia Pacific (Singapore) |
+| **Amazon Route 53** | 0.00 USD | 0.50–1.00 USD | Asia Pacific (Singapore) |
+| **AWS Lightsail – Database** | 0.00 USD | 10–15 USD | Asia Pacific (Singapore) |
+| **Amazon Cognito** | 0.00 USD | 2.00 USD | Asia Pacific (Singapore) |
+| **AWS Secrets Manager** | 0.00 USD | 0.40 USD | Asia Pacific (Singapore) |
+| **Amazon CloudWatch** | 0.00 USD | 0.30 USD | Asia Pacific (Singapore) |
+| **AWS Lightsail – API Server** | 0.00 USD | 5 - 10 USD | Asia Pacific (Singapore) |
+
+## **5. TEAM**
+
+### **Partner Executive Sponsor** 
+
+| Name  | Title  | Description | Email / Contact Info |
+| :--- | :--- | :--- | :--- |
+| | | | |
 
 ---
 
-## **2. Problem Analysis**
+### **Project Stakeholders** 
 
-### **2.1 Current Situation**
-
-The jewelry retail market is rapidly shifting to online channels, driven by consumer demand for personalization, transparency, and high-quality digital experiences — especially among younger generations. However, most existing e-commerce systems face critical limitations:
-
-- Poor user experience: Slow page loading, outdated design, and lack of interactive features such as AR try-on.  
-- Lack of trust: Customers hesitate to purchase high-value items (gold, diamonds) due to concerns over data security and authenticity.  
-- Insecure, outdated infrastructure: Many legacy systems store passwords or customer data in plain text, making them vulnerable to attacks and limiting scalability.  
+| Name  | Title  | Stakeholder for  | Email / Contact Info  |
+| :--- | :--- | :--- | :--- |
+| | | | |
 
 ---
 
-### **2.2 Key Challenges**
+### **Partner Project Team** 
 
-- **Speed and reliability:**  
-  Jewelry relies heavily on high-resolution imagery and interactive content (e.g., 360° views, AR try-on). Without a global CDN, loading such content becomes slow and unreliable, resulting in high cart abandonment rates.  
-
-- **Security and fraud risks:**  
-  E-commerce platforms are prime targets for cyberattacks. Without a Web Application Firewall (WAF), systems are exposed to SQL injection, cross-site scripting, and data breaches. Storing credentials directly in code poses severe risks of unauthorized access.  
-
-- **Data loss and recovery issues:**  
-  Transactions and inventory records must be 100% accurate. Local storage risks permanent data loss if hardware fails. Without durable storage like Amazon S3, essential data such as invoices and product images could become irretrievable.  
-
-- **Limited monitoring and control:**  
-  Without centralized monitoring tools such as CloudWatch, operators can only detect issues after customers report them, increasing MTTR (Mean Time to Recovery) and damaging user trust.  
-
----
-
-### **2.3 Stakeholder Impact**
-
-| **Stakeholder** | **Key Impact** |
-|------------------|----------------|
-| Customers | Gain confidence through fast, transparent, and secure online shopping. |
-| Operations Team | Easier system monitoring, with automated backup and recovery processes. |
-| Developers | Faster development through modular architecture with API Gateway and Lightsail. |
-| Business Owners | Continuous business operations, reduced data loss risk, and stronger competitive advantage. |
+| Name  | Title  | Role  | Email / Contact Info  |
+| :--- | :--- | :--- | :--- |
+| | Product Owner | | |
+| | Project Manager | | |
+| ... | ... | | |
+| | Software Developer | Developer | |
+| ... | ... | | |
+| | Software Developer | Developer | |
+| ... | ... | | |
+| | Software Developer | Developer | |
+| ... | ... | | |
+| | Software Developer | Developer | |
 
 ---
 
-### **2.4 Business Consequences**
+### **Project Escalation Contacts** 
 
-- **Revenue loss:** Slow performance and poor UX reduce conversions and increase cart abandonment.  
-- **Reputation and compliance risks:** Data breaches (from missing WAF or Secrets Manager) can result in heavy penalties and long-term brand damage — especially in the luxury goods sector.  
-- **Higher operational costs:** Lack of automated monitoring and backup increases manpower and recovery time.  
-- **Limited scalability:** Legacy systems fail to adapt to fast market growth, causing missed business opportunities.  
-
----
-
-## **3. Solution Architecture**
-
-![Platform Architecture Diagram](/images/image7.png)
-
-### **3.1 Architecture Overview**
-The proposed architecture is a high-performance e-commerce platform deployed on the AWS Cloud (Singapore Region) using a separated SPA/microservices design. This enables dynamic processing and high scalability:
-
-- **Static Frontend Delivery:** React frontend files (HTML, CSS, JS) are stored on S3 and served via CloudFront CDN for global low-latency delivery.  
-- **Dynamic Backend Processing:** Business logic and data (catalogs, carts, orders) are handled through a .NET API hosted on Lightsail, exposed securely via API Gateway.  
-
----
-
-### **3.2 AWS Services Used**
-
-| **Category** | **AWS Service** | **Primary Function** |
-|---------------|----------------|----------------------|
-| Networking & Edge | Route 53, CloudFront, WAF, ACM | DNS routing, CDN delivery, web protection, SSL management |
-| Compute & API | API Gateway, Lightsail | API endpoint management and backend application hosting |
-| Identity & Access | Cognito, Secrets Manager | Authentication/authorization and secure credential management |
-| Storage & Database | S3, Lightsail MySQL | Static asset storage and relational database for transactional data |
-| Resilience & Backup | AWS Backup, S3 Versioning, Glacier, Lightsail Snapshots | Automated backups, archiving, and data version control |
-| Monitoring & Audit | CloudWatch, CloudTrail | Real-time performance tracking and API activity auditing |
-
----
-
-### **3.3 Component Design**
-
-- **Presentation Layer (Frontend):** Static React site hosted on S3, distributed via CloudFront. AWS WAF provides edge-level protection from common exploits.  
-- **Application Layer (Backend):** API Gateway validates Cognito tokens, manages API requests, and enforces throttling. Lightsail Instance (Ubuntu) runs the .NET Core API for handling business logic (orders, products, payments).  
-- **Data Layer:** MySQL Database on Lightsail manages all relational data; credentials stored securely in Secrets Manager. Amazon S3 stores user uploads, product images, and other static assets.  
-
----
-
-### **3.4 Security Architecture**
-
-- **Edge Protection:** WAF filters malicious requests; ACM enforces HTTPS encryption.  
-- **User Authentication:** All login and registration are handled by Cognito with secure token validation.  
-- **Infrastructure Security:** Secrets Manager ensures sensitive credentials are never stored in plain text.  
-- **Auditing:** CloudTrail records every API call for compliance and traceability.  
-
----
-
-### **3.5 Scalability and Observability**
-
-- Global scalability via CloudFront caching and distribution.  
-- Unlimited storage growth on S3 for media assets.  
-- Resource monitoring through CloudWatch metrics, enabling proactive scaling decisions.  
-
----
-
-## **4. Technical Implementation Plan**
-
-| **Phase** | **Duration** | **Goal** | **Deliverables** | **Success Criteria** |
-|------------|---------------|-----------|------------------|----------------------|
-| 1. Infrastructure Setup | Week 1–2 | Configure AWS environment | S3, CloudFront, Cognito, Route 53, SSL | Stable environment |
-| 2. Backend Development | Week 3–5 | Build .NET API & MySQL schema | CRUD functions, database | Backend operational |
-| 3. Frontend Integration | Week 6–7 | Connect React SPA to API | Login, UI pages | UI functional |
-| 4. Image Upload Module | Week 8–9 | Enable S3 upload | Successful upload test | Pass |
-| 5. Monitoring & Backup | Week 10–11 | Configure CloudWatch & Snapshots | Alerts and auto-backup | System stable |
-| 6. Testing & Deployment | Week 12–14 | QA and final release | Demo and documentation | Full system stable |
-
----
-
-## **5. Roadmap & Key Milestones**
-
-The project will run for 14 weeks (September–December 2025), divided into six Agile–Scrum sprints.
-
-| **Sprint** | **Deliverable** | **Success Criteria** |
-|-------------|-----------------|----------------------|
-| Sprint 1 – Foundation | AWS setup (Lightsail, S3, CloudFront, Cognito, Route53) | React website served via HTTPS; Cognito login test successful |
-| Sprint 2 – Backend & DB | .NET API and MySQL schema | CRUD operations working correctly |
-| Sprint 3 – Frontend | React pages integrated with API | Product and cart display functioning |
-| Sprint 4 – Media | S3 upload integration | Image delivery via CDN |
-| Sprint 5 – Checkout & Payment | Complete order flow | Checkout and order confirmation functional |
-| Sprint 6 – Testing & Monitoring | Fully functional system | CloudWatch logs and backups verified |
-
----
+| Name  | Title  | Role  | Email / Contact Info  |
+| :--- | :--- | :--- | :--- |
+| | | | |
 
 ## **6. Estimated Budget**
 
